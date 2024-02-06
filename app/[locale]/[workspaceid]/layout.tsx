@@ -99,7 +99,8 @@ export default function WorkspaceLayout({ children }: WorkspaceLayoutProps) {
     setSelectedWorkspace(workspace);
 
     const assistantData = await getAssistantWorkspacesByWorkspaceId(workspaceId);
-    setAssistants(assistantData.assistants);
+    // Use a type assertion to ensure TypeScript understands the type of data
+    setAssistants(assistantData.assistants as Assistant[]);
 
     for (const assistant of assistantData.assistants) {
       let url = "";
