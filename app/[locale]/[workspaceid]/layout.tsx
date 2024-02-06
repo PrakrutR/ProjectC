@@ -98,7 +98,8 @@ export default function WorkspaceLayout({ children }: WorkspaceLayoutProps) {
 
     const workspace = await getWorkspaceById(workspaceId)
     setSelectedWorkspace(workspace)
-
+    // Inside your component in layout.tsx
+    const [assistants, setAssistants] = useState<Assistant[]>([]);
     const assistantData = await getAssistantWorkspacesByWorkspaceId(workspaceId)
     setAssistants(assistantData.assistants)
 
