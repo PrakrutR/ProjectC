@@ -15,7 +15,7 @@ const inter = Inter({ subsets: ["latin"] })
 const APP_NAME = "GenHub"
 const APP_DEFAULT_TITLE = "GenHub"
 const APP_TITLE_TEMPLATE = "%s - GenHub"
-const APP_DESCRIPTION = "Chabot UI PWA!"
+const APP_DESCRIPTION = "GenHub"
 
 interface RootLayoutProps {
   children: ReactNode
