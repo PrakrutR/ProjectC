@@ -23,6 +23,12 @@ import Loading from "../loading"
 interface WorkspaceLayoutProps {
   children: ReactNode
 }
+// At the top of your layout.tsx or in a separate interfaces/models file
+interface Assistant {
+  id: string;
+  name: string;
+  // Add other assistant properties here
+}
 
 export default function WorkspaceLayout({ children }: WorkspaceLayoutProps) {
   const router = useRouter()
