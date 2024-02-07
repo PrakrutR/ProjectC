@@ -9,8 +9,8 @@ interface ChatbotUISVGProps {
 
 export const ChatbotUISVG: FC<ChatbotUISVGProps> = ({ theme, scale = 1 }) => {
   const imageSrc = theme === "dark" ? chatbotUIPNGDark : chatbotUIPNGLight;
-  const width = 1024 * scale; // Replace 189 with the original width of your PNGs
-  const height = 1024 * scale; // Replace 194 with the original height of your PNGs
+  const width = 600 * scale; // Replace 189 with the original width of your PNGs
+  const height = 600 * scale; // Replace 194 with the original height of your PNGs
   return (
     <img
       src={imageSrc.src}
