@@ -13,7 +13,7 @@ export const ChatbotUISVG: FC<ChatbotUISVGProps> = ({ theme, scale = 1 }) => {
   const height = 194 * scale; // Replace 194 with the original height of your PNGs
   return (
     <img
-      src={imageSrc}
+      src={imageSrc.src}
       width={width}
       height={height}
       alt="GenHub"
