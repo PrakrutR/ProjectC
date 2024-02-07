@@ -1,7 +1,7 @@
 import { FC } from "react"
 import chatbotUIPNGDark from '../../public/DARK_BRAND_LOGO.png'; // Path to the dark mode image
 import chatbotUIPNGLight from '../../public/LIGHT_BRAND_LOGO.png'; // Path to the light mode image
-
+import Image from 'next/image'
 interface ChatbotUISVGProps {
   theme: "dark" | "light"
   scale?: number
