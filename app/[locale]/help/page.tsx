@@ -2,7 +2,7 @@ import React from 'react';
 // Import the Next.js Image component
 import Image from 'next/image';
 // Import the GenHub logo - continue using your actual logo path
-import GenHubLogo from '../../../public/DARK_BRAND_LOGO.png';
+import GenHubLogo from '../../../public/icon-192x192.png';
 
 export default function HelpPage() {
   return (
