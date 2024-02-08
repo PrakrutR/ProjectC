@@ -2,14 +2,14 @@ import React from 'react';
 // Import the Next.js Image component
 import Image from 'next/image';
 // Import the GenHub logo - continue using your actual logo path
-import GenHubLogo from '../../../public/icon-192x192.png';
+import GenHubLogo from '../../../public/DARK_BRAND_LOGO.png';
 
 export default function HelpPage() {
   return (
     <div className="size-screen flex flex-col items-center justify-center p-4">
       {/* Use the Next.js Image component for the logo */}
       <div className="mb-4" style={{ width: 160, height: 160 }}> {/* Adjust the logo container size as needed */}
-        <Image src={GenHubLogo} alt="GenHub Logo" layout="fill" objectFit="contain" />
+        <Image src={GenHubLogo} width={192} height={192} alt="GenHub Logo" layout="fill" objectFit="contain" />
       </div>
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Welcome to GenHub</h1>
