@@ -1,6 +1,6 @@
 import React from 'react';
 // Import the GenHub logo - replace './path/to/logo.png' with your actual logo path
-import GenHubLogo from '../../public/DARK_BRAND_LOGO.png';
+import GenHubLogo from '../../../public/DARK_BRAND_LOGO.png';
 
 export default function HelpPage() {
   return (
