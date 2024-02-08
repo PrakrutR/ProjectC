@@ -8,7 +8,7 @@ export default function HelpPage() {
   return (
     <div className="size-screen flex flex-col items-center justify-center p-4">
       {/* Container to constrain the logo size */}
-      <div className="logo-container relative" style={{ width: '200px', height: '200px' }}>
+      <div className="logo-container relative mb-6" style={{ width: '200px', height: '200px' }}>
         <Image src={GenHubLogo} alt="GenHub Logo" layout="responsive" width={200} height={200} />
       </div>
       <div className="text-center mb-8">
