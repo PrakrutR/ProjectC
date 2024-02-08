@@ -29,10 +29,10 @@ export default function HelpPage() {
       <div className="account-settings-section mb-8">
         <h3 className="text-2xl font-semibold mb-4">Account Settings</h3>
         <p className="text-md mb-4">
-        Your account settings are the key to a personalized GenHub experience. You can reshape your identity on the platform at the bottom left of the sidebar. Change your username to something unique, update your profile image to reflect your persona, and set your display name to be recognized by the community. Most importantly, the "profile context" feature allows you to share information about yourself within 1500 characters. All AI models use this context to provide more personalized and relevant responses.
+        Your account settings are the key to a personalized GenHub experience. You can reshape your identity on the platform at the bottom left of the sidebar. Change your username to something unique, update your profile image to reflect your persona, and set your display name to be recognized by the community. Most importantly, the &quot;profile context&quot; feature allows you to share information about yourself within 1500 characters. All AI models use this context to provide more personalized and relevant responses.
         </p>
         <p className="text-md italic mb-4">
-          Example Profile Context: &quot;I&apos;m an avid reader and enjoy exploring fantasy and science fiction genres. My work revolves around environmental science, and I often look for creative ways to explain complex concepts. I appreciate humor and enjoy discussing technological advancements and their societal impacts.&quot;
+        Example Profile Context: &quot;I&apos;m an avid reader and enjoy exploring fantasy and science fiction genres. My work revolves around environmental science, and I often look for creative ways to explain complex concepts. I appreciate humor and enjoy discussing technological advancements and their societal impacts.&quot;
         </p>
       </div>
       {/* Subsequent sections for each feature will be added here */}
