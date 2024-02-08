@@ -21,7 +21,7 @@ export default function HelpPage() {
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-4">Getting Started with GenHub</h2>
         <p className="text-md mb-4">
-        As you enter the GenHub world, each feature is crafted to elevate your AI interaction experience. From adjusting your account settings to creating your AI assistant, here's how to navigate and utilize the platform's capabilities to supercharge your AI adventures.
+        As you enter the GenHub world, each feature is crafted to elevate your AI interaction experience. From adjusting your account settings to creating your AI assistant, here&apos;s how to navigate and utilize the platform&apos;s capabilities to supercharge your AI adventures.
         </p>
       </div>
       
