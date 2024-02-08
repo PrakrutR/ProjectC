@@ -32,7 +32,7 @@ export default function HelpPage() {
         Your account settings are the key to a personalized GenHub experience. You can reshape your identity on the platform at the bottom left of the sidebar. Change your username to something unique, update your profile image to reflect your persona, and set your display name to be recognized by the community. Most importantly, the "profile context" feature allows you to share information about yourself within 1500 characters. All AI models use this context to provide more personalized and relevant responses.
         </p>
         <p className="text-md italic mb-4">
-        Example Profile Context: "I'm an avid reader and enjoy exploring fantasy and science fiction genres. My work revolves around environmental science, and I often look for creative ways to explain complex concepts. I appreciate humor and enjoy discussing technological advancements and their societal impacts."
+          Example Profile Context: &quot;I&apos;m an avid reader and enjoy exploring fantasy and science fiction genres. My work revolves around environmental science, and I often look for creative ways to explain complex concepts. I appreciate humor and enjoy discussing technological advancements and their societal impacts.&quot;
         </p>
       </div>
       {/* Subsequent sections for each feature will be added here */}
