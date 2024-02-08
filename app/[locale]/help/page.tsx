@@ -46,13 +46,13 @@ export default function HelpPage() {
             Select your AI model from the top right of the dashboard, with the default set to GPT-4 Turbo. Clicking on the model name opens a menu to search or select a model from the dropdown. The dropdown categorizes models into hosted, OpenRouter, and local models across three tabs, ensuring you find the right AI for your needs.
           </p>
           <p className="text-md mb-4">
-            The system prompt sets the tone for your interaction. The default prompt is &quot;You are a friendly, helpful AI assistant.&quot; Alternative system prompts include &quot;You are an expert in environmental science,&quot; &quot;You are a creative story writer,&quot; or &quot;You are a knowledgeable tech advisor.&quot; These prompts guide the AI's responses to align with your intended use case.
+            The system prompt sets the tone for your interaction. The default prompt is &quot;You are a friendly, helpful AI assistant.&quot; Alternative system prompts include &quot;You are an expert in environmental science,&quot; &quot;You are a creative story writer,&quot; or &quot;You are a knowledgeable tech advisor.&quot; These prompts guide the AI&apos;s responses to align with your intended use case.
           </p>
           <p className="text-md mb-4">
-            Delve into "Advanced Settings" for more control. Set the 'temperature' to adjust the AI's creativity, with zero being the most deterministic and allowing maximum variability. 'Context length' defines how much previous dialogue the AI considers, impacting its response relevance. You can exclude your profile context and workspace instructions for specific chats, tailoring only the AI's responses to the current conversation.
+            Delve into &quot;Advanced Settings&quot; for more control. Set the &apos;temperature&apos; to adjust the AI&apos;s creativity, with zero being the most deterministic and one allowing for maximum variability. &apos;Context length&apos; defines how much previous dialogue the AI considers, impacting its response relevance. You can opt to exclude your profile context and workspace instructions for specific chats, tailoring the AI&apos;s responses to the current conversation only.
           </p>
           <p className="text-md mb-4">
-            Lastly, choose your embedding provider between OpenAI and local. AI embeddings are numerical data representations that help the AI understand and generate responses. OpenAI's embeddings are based on vast datasets and sophisticated models, offering broad knowledge and nuanced understanding. Local embeddings generated within your system offer privacy and customization but may vary in scope and depth.
+            Lastly, choose your embeddings provider between OpenAI and local. AI embeddings are numerical representations of data that help the AI understand and generate responses. OpenAI&apos;s embeddings are based on vast datasets and sophisticated models, offering broad knowledge and nuanced understanding. Local embeddings, generated within your system, offer privacy and customization but may vary in scope and depth.
           </p>
         </div>
       </div>
