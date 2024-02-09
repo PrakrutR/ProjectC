@@ -1,8 +1,27 @@
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
-import { GoogleGenerativeAI } from "@google/generative-ai"
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai"
 
 export const runtime = "edge"
+
+const safetySettings = [
+  {
+    category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+];
 
 export async function POST(request: Request) {
   const json = await request.json()
@@ -25,7 +44,8 @@ export async function POST(request: Request) {
       const chat = googleModel.startChat({
         history: messages,
         generationConfig: {
-          temperature: chatSettings.temperature
+          temperature: chatSettings.temperature,
+          safetySettings, // Add safetySettings here
         }
       })
 
@@ -46,17 +66,18 @@ export async function POST(request: Request) {
         headers: { "Content-Type": "text/plain" }
       })
     } else if (chatSettings.model === "gemini-pro-vision") {
-      // FIX: Hacky until chat messages are supported
       const HACKY_MESSAGE = messages[messages.length - 1]
 
       const result = await googleModel.generateContent([
         HACKY_MESSAGE.prompt,
-        HACKY_MESSAGE.imageParts
-      ])
+        HACKY_MESSAGE.imageParts,
+      ], {
+        safetySettings, // Add safetySettings here if the method supports it
+      })
 
       const response = result.response
 
-      const text = response.text()
+      const text = await response.text()
 
       return new Response(text, {
         headers: { "Content-Type": "text/plain" }
