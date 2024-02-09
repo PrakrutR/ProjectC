@@ -1,15 +1,8 @@
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai"
+import { GoogleGenerativeAI } from "@google/generative-ai"
 
 export const runtime = "edge"
-
-const safetySettings = {
-  [HarmCategory.HARM_CATEGORY_HARASSMENT]: HarmBlockThreshold.BLOCK_NONE,
-  [HarmCategory.HARM_CATEGORY_HATE_SPEECH]: HarmBlockThreshold.BLOCK_NONE,
-  [HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT]: HarmBlockThreshold.BLOCK_NONE,
-  [HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT]: HarmBlockThreshold.BLOCK_NONE,
-};
 
 export async function POST(request: Request) {
   const json = await request.json()
@@ -29,29 +22,45 @@ export async function POST(request: Request) {
     if (chatSettings.model === "gemini-pro") {
       const lastMessage = messages.pop()
 
-      // Assuming startChat can accept safety settings at the same level as generationConfig
       const chat = googleModel.startChat({
         history: messages,
         generationConfig: {
-          temperature: chatSettings.temperature,
-        },
-        safetySettings: safetySettings, // Adjusted to be a top-level property if supported
+          temperature: chatSettings.temperature
+        }
       })
 
-      // Continue with your existing logic for sending the message and streaming the response
+      const response = await chat.sendMessageStream(lastMessage.parts)
+
+      const encoder = new TextEncoder()
+      const readableStream = new ReadableStream({
+        async start(controller) {
+          for await (const chunk of response.stream) {
+            const chunkText = chunk.text()
+            controller.enqueue(encoder.encode(chunkText))
+          }
+          controller.close()
+        }
+      })
+
+      return new Response(readableStream, {
+        headers: { "Content-Type": "text/plain" }
+      })
     } else if (chatSettings.model === "gemini-pro-vision") {
-      // Assuming generateContent can accept safety settings at the same level as the content and generationConfig
+      // FIX: Hacky until chat messages are supported
       const HACKY_MESSAGE = messages[messages.length - 1]
 
-      const result = await googleModel.generateContent({
-        content: [HACKY_MESSAGE.prompt, HACKY_MESSAGE.imageParts],
-        generationConfig: {
-          // Any specific generation config here
-        },
-        safetySettings: safetySettings, // Adjusted to be a top-level property if supported
-      })
+      const result = await googleModel.generateContent([
+        HACKY_MESSAGE.prompt,
+        HACKY_MESSAGE.imageParts
+      ])
 
-      // Continue with your existing logic for handling the response
+      const response = result.response
+
+      const text = response.text()
+
+      return new Response(text, {
+        headers: { "Content-Type": "text/plain" }
+      })
     }
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
