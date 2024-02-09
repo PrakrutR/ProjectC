@@ -104,7 +104,7 @@ export default function HelpPage() {
           Keep your GenHub workspace organized and clutter-free with the Folders feature. By grouping your chats into folders, you can easily maintain a tidy workspace and navigate various conversations. Whether it&apos;s project-specific discussions, team chats, or individual conversations, Folders help you categorize them in a way that makes sense.
         </p>
         <p className="text-md mb-4">
-          To create a new folder, look for the "New Folder" icon at the top right of the sidebar, adjacent to the "New Chat" button. Each folder can be customized with a unique name, allowing you to organize your chats based on projects, topics, or other criteria that fit your workflow.
+          To create a new folder, look for the &quot;New Folder&quot; icon at the top right of the sidebar, adjacent to the &quot;New Chat&quot; button. Each folder can be customized with a unique name, allowing you to organize your chats based on projects, topics, or other criteria that fit your workflow.
         </p>
         <p className="text-md mb-4">
           This feature is handy for managing many chats, ensuring that you can always find the conversation you need without sifting through an unorganized list. It&apos;s all about making your GenHub experience as efficient and organized as possible.
@@ -137,7 +137,7 @@ export default function HelpPage() {
           Utilize advanced settings to fine-tune your assistant&apos;s approach, adjusting its temperature for creativity, context length for memory depth, and more. Integrate files from your GenHub uploads into your assistant&apos;s memory for enhanced specialization, and select from available GenHub tools to expand its capabilities.
         </p>
         <p className="text-md mb-4">
-          Access your assistants directly from the "Quick Settings&quot; for seamless integration into your workflow. Easily loop an assistant into any conversation by typing &quot;@&quot; followed by the assistant&apos;s name in the chat box, instantly bringing its expertise and predefined role into play. This flexibility allows you to leverage tailored assistance across multiple contexts and conversations, enriching your interactions and productivity on GenHub.
+          Access your assistants directly from the &quot;Quick Settings&quot; for seamless integration into your workflow. Easily loop an assistant into any conversation by typing &quot;@&quot; followed by the assistant&apos;s name in the chat box, instantly bringing its expertise and predefined role into play. This flexibility allows you to leverage tailored assistance across multiple contexts and conversations, enriching your interactions and productivity on GenHub.
         </p>
       </div>
       <div className="tools-section mb-8">
