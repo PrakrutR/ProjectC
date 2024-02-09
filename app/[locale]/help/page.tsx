@@ -150,7 +150,7 @@ export default function HelpPage() {
         </p>
         <div className="text-md mb-4 bg-gray-100 p-4 rounded">
           Example Tool Schema: <br />
-          <pre>{`{
+          <pre style={{ backgroundColor: '#f0f0f0' }}>{`{
             "openapi": "3.1.0",
             "info": {
               "title": "Get weather data",
@@ -192,7 +192,7 @@ export default function HelpPage() {
         </p>
         <div className="text-md mb-4 bg-gray-100 p-4 rounded">
           Additional Example Tool Schema: <br />
-          <pre>{`{
+          <pre style={{ backgroundColor: '#f0f0f0' }}>{`{
             "openapi": "3.1.0",
             "info": {
               "title": "Translate Text",
