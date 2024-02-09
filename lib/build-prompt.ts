@@ -233,54 +233,27 @@ export async function buildGoogleGeminiFinalMessages(
 
   let GOOGLE_FORMATTED_MESSAGES = []
 
-  const safetySettings = [
-    {
-      category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-      threshold: HarmBlockThreshold.BLOCK_NONE,
-    },
-    {
-      category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-      threshold: HarmBlockThreshold.BLOCK_NONE,
-    },
-    {
-      category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-      threshold: HarmBlockThreshold.BLOCK_NONE,
-    },
-    {
-      category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-      threshold: HarmBlockThreshold.BLOCK_NONE,
-    },
-  ];
-  
-  // Adjusted section of the buildFinalMessages function for the gemini-pro model
   if (chatSettings.model === "gemini-pro") {
     GOOGLE_FORMATTED_MESSAGES = [
       {
         role: "user",
-        parts: finalMessages[0].content,
+        parts: finalMessages[0].content
       },
       {
         role: "model",
-        parts: "I will follow your instructions.",
-      },
-    ];
-  
+        parts: "I will follow your instructions."
+      }
+    ]
+
     for (let i = 1; i < finalMessages.length; i++) {
       GOOGLE_FORMATTED_MESSAGES.push({
         role: finalMessages[i].role === "user" ? "user" : "model",
-        parts: finalMessages[i].content as string,
-      });
+        parts: finalMessages[i].content as string
+      })
     }
-  
-    // Include safetySettings at the top level of the request object
-    const requestWithSafetySettings = {
-      messages: GOOGLE_FORMATTED_MESSAGES,
-      safetySettings: safetySettings, // Add the defined safetySettings here
-    };
-  
-    return requestWithSafetySettings;
-  }
-   else if ((chatSettings.model = "gemini-pro-vision")) {
+
+    return GOOGLE_FORMATTED_MESSAGES
+  } else if ((chatSettings.model = "gemini-pro-vision")) {
     // Gemini Pro Vision doesn't currently support messages
     async function fileToGenerativePart(file: File) {
       const base64EncodedDataPromise = new Promise(resolve => {
