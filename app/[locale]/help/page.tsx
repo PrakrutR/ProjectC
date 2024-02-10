@@ -254,7 +254,7 @@ export default function HelpPage() {
     <div className="ai-models-overview-section mb-8">
       <h3 className="text-2xl font-semibold mb-4">AI Models Overview</h3>
       <p className="text-md mb-4">
-        GenHub's test build features a diverse array of cutting-edge AI models, each tailored for different capabilities and use cases. From advanced text and image processing to specialized instruction-following abilities, these models represent the forefront of AI technology.
+        GenHub&apos;s test build features a diverse array of cutting-edge AI models, each tailored for different capabilities and use cases. From advanced text and image processing to specialized instruction-following abilities, these models represent the forefront of AI technology.
       </p>
     <ul className="list-disc pl-5 mb-4">
       <li>Gemini Pro</li>
@@ -302,7 +302,7 @@ export default function HelpPage() {
       GPT-4 Turbo shares some limitations with its predecessors, such as generating verbose content and occasionally requiring human intervention for precision. To optimize its use:
       <ul className="list-disc pl-5 mb-4">
         <li>Provide clear and specific prompts to guide the model effectively.</li>
-        <li>Utilize the model's large context window to include detailed background information when needed.</li>
+        <li>Utilize the model&apos;s large context window to include detailed background information when needed.</li>
         <li>Adjust temperature and maximum token settings to refine verbosity and response length.</li>
       </ul>
     </p>
@@ -328,7 +328,7 @@ export default function HelpPage() {
       Despite its broad knowledge base, GPT-4 may require guidance to generate specific content types and avoid biases present in training data. Effective practices include:
       <ul className="list-disc pl-5 mb-4">
         <li>Refining prompts to elicit the desired level of creativity or factual accuracy.</li>
-        <li>Employing iterative feedback loops to hone the model's outputs.</li>
+        <li>Employing iterative feedback loops to hone the model&apos;s outputs.</li>
         <li>Staying updated with model enhancements to leverage new features and improvements.</li>
       </ul>
     </p>
@@ -337,7 +337,7 @@ export default function HelpPage() {
     <h3 className="text-2xl font-semibold mb-4">GPT-4 Vision</h3>
     <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
     <p className="text-md mb-4">
-      GPT-4 Vision extends the capabilities of GPT-4 to the visual domain, enabling the model to understand and generate content that involves images and text. It's designed for multimodal tasks where both text and imagery are pivotal.
+      GPT-4 Vision extends the capabilities of GPT-4 to the visual domain, enabling the model to understand and generate content that involves images and text. It&apos;s designed for multimodal tasks where both text and imagery are pivotal.
     </p>
     <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
     <p className="text-md mb-4">
@@ -351,7 +351,7 @@ export default function HelpPage() {
     </p>
     <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
     <p className="text-md mb-4">
-      GPT-4 Vision's performance is contingent on the quality and relevance of the visual data it processes. To ensure optimal outcomes:
+      GPT-4 Vision&apos;s performance is contingent on the quality and relevance of the visual data it processes. To ensure optimal outcomes:
       <ul className="list-disc pl-5 mb-4">
         <li>Select high-quality, relevant images to accompany text prompts.</li>
         <li>Test and fine-tune the interplay between visual and textual inputs for your specific application.</li>
@@ -379,7 +379,7 @@ export default function HelpPage() {
     <p className="text-md mb-4">
       While GPT-3.5 is a powerful tool, users should be aware of its limitations such as occasional factual inaccuracies or misunderstanding complex prompts. To maximize its potential:
       <ul className="list-disc pl-5 mb-4">
-        <li>Craft detailed and specific prompts to guide the model's responses.</li>
+        <li>Craft detailed and specific prompts to guide the model&apos;s responses.</li>
         <li>Utilize follow-up questions to refine and improve the accuracy of the information provided.</li>
         <li>Regularly update and train the model with the latest data for best performance.</li>
       </ul>
@@ -405,8 +405,8 @@ export default function HelpPage() {
     <p className="text-md mb-4">
       Gemini Pro, while robust, may require calibration for niche domains or highly specialized content. Best practices include:
       <ul className="list-disc pl-5 mb-4">
-        <li>Providing context-rich prompts to leverage the model's domain expertise.</li>
-        <li>Verifying the model's outputs against domain-specific data or expert opinion.</li>
+        <li>Providing context-rich prompts to leverage the model&apos;s domain expertise.</li>
+        <li>Verifying the model&apos;s outputs against domain-specific data or expert opinion.</li>
         <li>Continuously training the model with updated, high-quality datasets.</li>
       </ul>
     </p>
@@ -415,7 +415,7 @@ export default function HelpPage() {
       <h3 className="text-2xl font-semibold mb-4">Gemini Pro Vision</h3>
       <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
       <p className="text-md mb-4">
-        Gemini Pro Vision is a specialized AI model that combines visual processing with language understanding to interpret and generate multimodal content. It's designed to seamlessly integrate visual data with text for a comprehensive understanding of both elements in tandem.
+        Gemini Pro Vision is a specialized AI model that combines visual processing with language understanding to interpret and generate multimodal content. It&apos;s designed to seamlessly integrate visual data with text for a comprehensive understanding of both elements in tandem.
       </p>
       <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
       <p className="text-md mb-4">
@@ -432,8 +432,8 @@ export default function HelpPage() {
         Like all AI models, Gemini Pro Vision has its constraints, particularly in interpreting complex visual scenes with multiple elements. To get the most out of this model:
         <ul className="list-disc pl-5 mb-4">
           <li>Provide clear and high-resolution images to ensure accurate visual interpretation.</li>
-          <li>Pair images with contextually relevant text prompts to guide the model's output.</li>
-          <li>Continuously validate and refine the model's performance with a diverse dataset to avoid biases and improve accuracy.</li>
+          <li>Pair images with contextually relevant text prompts to guide the model&apos;s output.</li>
+          <li>Continuously validate and refine the model&apos;s performance with a diverse dataset to avoid biases and improve accuracy.</li>
         </ul>
       </p>
     </div>
@@ -441,7 +441,7 @@ export default function HelpPage() {
       <h3 className="text-2xl font-semibold mb-4">Mistral Tiny</h3>
       <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
       <p className="text-md mb-4">
-        Mistral Tiny is a compact and efficient AI model optimized for applications where speed and low resource usage are priorities. It's designed to perform a variety of language tasks with a small footprint.
+        Mistral Tiny is a compact and efficient AI model optimized for applications where speed and low resource usage are priorities. It&apos;s designed to perform a variety of language tasks with a small footprint.
       </p>
       <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
       <p className="text-md mb-4">
@@ -465,7 +465,7 @@ export default function HelpPage() {
       <h3 className="text-2xl font-semibold mb-4">Mistral Small</h3>
       <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
       <p className="text-md mb-4">
-        Mistral Small is designed as a balance between performance and size, offering more nuanced language capabilities while still being resource-efficient. It's aimed at scenarios that need a bit more depth in language understanding.
+        Mistral Small is designed as a balance between performance and size, offering more nuanced language capabilities while still being resource-efficient. It&apos;s aimed at scenarios that need a bit more depth in language understanding.
       </p>
       <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
       <p className="text-md mb-4">
@@ -481,7 +481,7 @@ export default function HelpPage() {
         Mistral Small can perform many language tasks well but might not capture the full depth of context like larger models. To optimize its use:
         <ul className="list-disc pl-5 mb-4">
           <li>Structure prompts to be clear yet allow for a bit more elaboration.</li>
-          <li>Consider the model's output in conjunction with user feedback to improve over time.</li>
+          <li>Consider the model&apos;s output in conjunction with user feedback to improve over time.</li>
         </ul>
       </p>
     </div>
@@ -504,8 +504,8 @@ export default function HelpPage() {
       <p className="text-md mb-4">
         Mistral Medium provides deeper understanding but may still face limitations in certain areas compared to the larger mistral models
       <ul className="list-disc pl-5 mb-4">
-        <li>Optimize the model's parameters based on the complexity of the task to ensure a balance between response quality and computational efficiency.</li>
-        <li>Regularly update the model to incorporate the latest improvements and data, ensuring that the model's capabilities continue to align with user expectations.</li>
+        <li>Optimize the model&apos;s parameters based on the complexity of the task to ensure a balance between response quality and computational efficiency.</li>
+        <li>Regularly update the model to incorporate the latest improvements and data, ensuring that the model&apos;s capabilities continue to align with user expectations.</li>
       </ul>
       </p>
     </div>
@@ -513,7 +513,7 @@ export default function HelpPage() {
       <h3 className="text-2xl font-semibold mb-4">Mistral-7b Instruct</h3>
       <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
       <p className="text-md mb-4">
-        Mistral-7b Instruct is a powerful language model that excels in following instructions and generating responses that closely align with user intents. It's specifically fine-tuned for tasks that require a high level of understanding and adherence to guidelines or prompts provided by users.
+        Mistral-7b Instruct is a powerful language model that excels in following instructions and generating responses that closely align with user intents. It&apos;s specifically fine-tuned for tasks that require a high level of understanding and adherence to guidelines or prompts provided by users.
       </p>
       <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
       <p className="text-md mb-4">
@@ -529,9 +529,9 @@ export default function HelpPage() {
       <p className="text-md mb-4">
         While Mistral-7b Instruct is designed for instruction-following, it may occasionally require prompt refinement to achieve the desired outcome. To utilize this model effectively:
         <ul className="list-disc pl-5 mb-4">
-          <li>Formulate prompts that are detailed and unambiguous to guide the model's output more effectively.</li>
-          <li>Use iterative prompting to fine-tune the instructions and the model's understanding of the task.</li>
-          <li>Review and edit the model's outputs when necessary to ensure they meet the required standards and intentions.</li>
+          <li>Formulate prompts that are detailed and unambiguous to guide the model&apos;s output more effectively.</li>
+          <li>Use iterative prompting to fine-tune the instructions and the model&apos;s understanding of the task.</li>
+          <li>Review and edit the model&apos;s outputs when necessary to ensure they meet the required standards and intentions.</li>
         </ul>
       </p>
     </div>
@@ -554,7 +554,7 @@ export default function HelpPage() {
       <p className="text-md mb-4">
         While highly capable, Nous-Capybara-7b may produce outputs that need refinement for specific contexts. Best practices include:
         <ul className="list-disc pl-5 mb-4">
-          <li>Preparing prompts that are clear and directed towards the model's strengths in generating human-like text.</li>
+          <li>Preparing prompts that are clear and directed towards the model&apos;s strengths in generating human-like text.</li>
           <li>Monitoring for biases in the content and adjusting prompts accordingly to mitigate them.</li>
           <li>Reviewing generated content for alignment with the intended purpose and accuracy.</li>
         </ul>
@@ -602,11 +602,11 @@ export default function HelpPage() {
       </p>
       <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
       <p className="text-md mb-4">
-        While Toppy-m-7b is adept at analysis and reasoning, it's essential to guide it with specific and well-structured prompts. To maximize effectiveness:
+        While Toppy-m-7b is adept at analysis and reasoning, it&apos;s essential to guide it with specific and well-structured prompts. To maximize effectiveness:
         <ul className="list-disc pl-5 mb-4">
-          <li>Frame questions or tasks clearly to leverage the model's analytical strengths.</li>
-          <li>Regularly review and refine the model's outputs to ensure accuracy and relevance.</li>
-          <li>Utilize feedback loops to continually improve the model's performance on specialized tasks.</li>
+          <li>Frame questions or tasks clearly to leverage the model&apos;s analytical strengths.</li>
+          <li>Regularly review and refine the model&apos;s outputs to ensure accuracy and relevance.</li>
+          <li>Utilize feedback loops to continually improve the model&apos;s performance on specialized tasks.</li>
         </ul>
       </p>
     </div>
@@ -614,7 +614,7 @@ export default function HelpPage() {
       <h3 className="text-2xl font-semibold mb-4">Cinematika-7b</h3>
       <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
       <p className="text-md mb-4">
-        Cinematika-7b specializes in understanding and generating content related to film, television, and video production. It's tailored to support creative processes in the visual storytelling industry, offering insights and generating scripts, storyboards, and conceptual ideas.
+        Cinematika-7b specializes in understanding and generating content related to film, television, and video production. It&apos;s tailored to support creative processes in the visual storytelling industry, offering insights and generating scripts, storyboards, and conceptual ideas.
       </p>
       <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
       <p className="text-md mb-4">
@@ -632,6 +632,131 @@ export default function HelpPage() {
           <li>Providing detailed contexts and clear objectives to guide the generation process.</li>
           <li>Collaborating with the model as a creative partner, using its outputs as a springboard for further development.</li>
           <li>Reviewing and editing generated content to ensure it aligns with creative vision and industry standards.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Rwkv Rwkv-5-world-3b</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Rwkv Rwkv-5-world-3b is designed to simulate complex world-building scenarios, making it an ideal tool for creators and developers in gaming, literature, and virtual environments. This model excels at generating coherent and intricate settings, characters, and narratives that adhere to predefined rules and logic.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        The model&apos;s unique capabilities lend themselves to:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Developing expansive and detailed game worlds with rich backstories.</li>
+          <li>Assisting authors in creating consistent and immersive fictional universes.</li>
+          <li>Generating dynamic content for virtual reality experiences and simulations.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        While Rwkv Rwkv-5-world-3b offers a broad range of creative possibilities, it&apos;s essential to provide clear guidelines and constraints to harness its full potential. Best practices include:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Defining clear rules and parameters for the model to follow in world-building tasks.</li>
+          <li>Iteratively refining generated content to ensure consistency with the envisioned world.</li>
+          <li>Collaborating with the model as a creative partner, using its outputs as inspiration for further development.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Recursal Rwkv-5-3b-ai-town</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Recursal Rwkv-5-3b-ai-town is crafted to generate detailed and interactive narratives for AI-driven communities and social simulations. It specializes in creating realistic dialogues, social interactions, and event-driven storylines that can adapt and evolve based on user input.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        This model is particularly effective in:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Powering AI characters in interactive fiction and role-playing games.</li>
+          <li>Creating dynamic social simulations where AI-driven characters interact with each other and users.</li>
+          <li>Enhancing virtual communities with AI that can participate in meaningful conversations and activities.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        To ensure Recursal Rwkv-5-3b-ai-town performs optimally, it&apos;s crucial to consider:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Integrating comprehensive context and background information to guide AI behavior in simulations.</li>
+          <li>Monitoring AI interactions to maintain narrative coherence and user engagement.</li>
+          <li>Employing feedback mechanisms to continually refine AI performance and story progression.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Recursal Eagle-7b</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Recursal Eagle-7b is designed to offer advanced analytical capabilities and data processing in various fields, from scientific research to market analysis. It excels at dissecting complex datasets and providing comprehensive insights and solutions.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        Ideal for tasks that require in-depth analysis and creative problem-solving, such as:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Interpreting scientific data and contributing to research developments.</li>
+          <li>Conducting market analysis and generating actionable business insights.</li>
+          <li>Enhancing decision-making processes with data-driven recommendations.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        While powerful, Recursal Eagle-7b&apos;s outputs should be validated for accuracy and applicability. To leverage this model effectively:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Provide detailed and specific prompts to guide the model&apos;s focus and output.</li>
+          <li>Combine the model&apos;s insights with expert review to ensure reliability and relevance.</li>
+          <li>Iteratively refine inputs based on initial outputs to hone in on the most valuable insights.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Zephyr-7b-beta</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Zephyr-7b-beta stands out for its ability to generate creative and engaging content across various media forms. It&apos;s particularly adept at crafting narratives, dialogues, and descriptive content that captivates and entertains audiences.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        This model is a perfect fit for creative industries, including:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Writing compelling narratives for books, scripts, and storytelling platforms.</li>
+          <li>Creating engaging content for blogs, articles, and social media.</li>
+          <li>Developing character dialogues and storylines for video games and interactive media.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        Zephyr-7b-beta excels in creative tasks but may require guidance to align with specific themes or styles. Effective use involves:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Directing the model with clear and imaginative prompts to stimulate creative output.</li>
+          <li>Editing and refining generated content to ensure consistency with project goals and artistic vision.</li>
+          <li>Experimenting with different prompts and settings to discover the model&apos;s full creative range.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Openchat-7b</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Openchat-7b is specifically engineered for creating highly interactive and engaging conversational AI experiences. It combines advanced natural language understanding with generative capabilities to facilitate dynamic and realistic dialogues.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        This model is particularly well-suited for applications that demand fluid and natural conversation, including:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Customer service bots that provide informative and helpful responses.</li>
+          <li>Virtual assistants for scheduling, reminders, and task management.</li>
+          <li>Social bots that can engage in casual conversation, entertainment, and companionship.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        While Openchat-7b excels in conversational contexts, maintaining relevancy and coherence over long interactions can be challenging. To optimize interactions:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Design conversations with clear context and intent to guide the dialogue effectively.</li>
+          <li>Incorporate fallback mechanisms for handling out-of-scope inquiries or misunderstandings.</li>
+          <li>Regularly update and train the model with new data to improve its understanding and response quality.</li>
         </ul>
       </p>
     </div>
