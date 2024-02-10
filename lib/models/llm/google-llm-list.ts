@@ -25,3 +25,4 @@ const GEMINI_PRO_VISION: LLM = {
 }
 
 export const GOOGLE_LLM_LIST: LLM[] = [GEMINI_PRO, GEMINI_PRO_VISION]
+// Note: As of the latest update, both Gemini Pro and Gemini Pro Vision models support customizable safety settings via the API.
