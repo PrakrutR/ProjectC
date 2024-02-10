@@ -1,5 +1,5 @@
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
-import { ChatSettings } from "@/types"
+import { ChatSettings, SafetySettings } from "@/types"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
 export const runtime = "edge"
@@ -7,9 +7,11 @@ export const runtime = "edge"
 export async function POST(request: Request) {
   const json = await request.json()
   const { chatSettings, messages } = json as {
-    chatSettings: ChatSettings
+    chatSettings: ChatSettings & { safetySettings: SafetySettings }
     messages: any[]
   }
+
+  chatSettings.safetySettings = { maxToxicity: 0.5 }
 
   try {
     const profile = await getServerProfile()
@@ -25,7 +27,8 @@ export async function POST(request: Request) {
       const chat = googleModel.startChat({
         history: messages,
         generationConfig: {
-          temperature: chatSettings.temperature
+          temperature: chatSettings.temperature,
+          safetySettings: chatSettings.safetySettings
         }
       })
 
@@ -52,7 +55,7 @@ export async function POST(request: Request) {
       const result = await googleModel.generateContent([
         HACKY_MESSAGE.prompt,
         HACKY_MESSAGE.imageParts
-      ])
+      ], chatSettings.safetySettings)
 
       const response = result.response
 
