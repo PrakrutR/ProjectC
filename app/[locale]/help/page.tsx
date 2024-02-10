@@ -251,8 +251,393 @@ export default function HelpPage() {
         This feature is especially useful for users who frequently switch contexts or require varied AI functionalities in their conversations. Quick Settings ensures that your preferred tools are always at your fingertips, ready to enhance your interaction with AI on GenHub.
       </p>
     </div>
+    <div className="ai-models-overview-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">AI Models Overview</h3>
+      <p className="text-md mb-4">
+        GenHub's test build features a diverse array of cutting-edge AI models, each tailored for different capabilities and use cases. From advanced text and image processing to specialized instruction-following abilities, these models represent the forefront of AI technology.
+      </p>
+    <ul className="list-disc pl-5 mb-4">
+      <li>Gemini Pro</li>
+      <li>Gemini Pro Vision</li>
+      <li>GPT-4 Turbo</li>
+      <li>GPT-4</li>
+      <li>GPT-3.5</li>
+      <li>GPT-4 Vision</li>
+      <li>Mistral Tiny</li>
+      <li>Mistral Medium</li>
+      <li>Mistral Small</li>
+      <li>Nousresearch Nous-Capybara-7b</li>
+      <li>Mistralai Mistral-7b Instruct</li>
+      <li>Gryphe Mythomist-7b</li>
+      <li>Undi95 Toppy-m-7b</li>
+      <li>Openrouter Cinematika-7b</li>
+      <li>Rwkv Rwkv-5-world-3b</li>
+      <li>Recursal Rwkv-5-3b-ai-town</li>
+      <li>Recursal Eagle-7b</li>
+      <li>Huggingfaceh4 Zephyr-7b-beta</li>
+      <li>Openchat-7b</li>
+    </ul>
+    <p className="text-md mb-4">
+      This collection is just the beginning. More models are expected to be added, broadening the scope and versatility of AI applications available to users. Stay tuned for updates as GenHub continues to integrate the latest advancements in AI.
+    </p>
+    </div>
+    <div className="model-guide-section mb-8">
+    <h3 className="text-2xl font-semibold mb-4">GPT-4 Turbo</h3>
+    <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+    <p className="text-md mb-4">
+      GPT-4 Turbo is an evolution of the GPT-4 model, fine-tuned for enhanced performance and efficiency. It is adept at processing natural language on a large scale, enabling comprehensive dialogue and contextual understanding.
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+    <p className="text-md mb-4">
+      This model excels in various applications that require both speed and depth of language comprehension, including:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Detailed customer support with extensive contextual referencing.</li>
+        <li>Creative writing assistance for maintaining narrative consistency.</li>
+        <li>Document summarization by processing large volumes of information.</li>
+        <li>Code generation and programming help through understanding complex prompts.</li>
+      </ul>
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+    <p className="text-md mb-4">
+      GPT-4 Turbo shares some limitations with its predecessors, such as generating verbose content and occasionally requiring human intervention for precision. To optimize its use:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Provide clear and specific prompts to guide the model effectively.</li>
+        <li>Utilize the model's large context window to include detailed background information when needed.</li>
+        <li>Adjust temperature and maximum token settings to refine verbosity and response length.</li>
+      </ul>
+    </p>
+    </div>
+    <div className="model-guide-section mb-8">
+    <h3 className="text-2xl font-semibold mb-4">GPT-4</h3>
+    <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+    <p className="text-md mb-4">
+      GPT-4 is a highly advanced language model known for its deep comprehension and generation capabilities. It is built to understand a wide array of contexts and subjects, making it versatile for numerous language-based tasks.
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+    <p className="text-md mb-4">
+      Ideal for a multitude of scenarios where nuanced language understanding is crucial, such as:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Content creation and editing across various formats and genres.</li>
+        <li>Complex data interpretation and analysis in research.</li>
+        <li>Conversational AI for realistic and engaging chatbot experiences.</li>
+        <li>Educational tools for personalized learning and tutoring.</li>
+      </ul>
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+    <p className="text-md mb-4">
+      Despite its broad knowledge base, GPT-4 may require guidance to generate specific content types and avoid biases present in training data. Effective practices include:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Refining prompts to elicit the desired level of creativity or factual accuracy.</li>
+        <li>Employing iterative feedback loops to hone the model's outputs.</li>
+        <li>Staying updated with model enhancements to leverage new features and improvements.</li>
+      </ul>
+    </p>
+    </div>
+    <div className="model-guide-section mb-8">
+    <h3 className="text-2xl font-semibold mb-4">GPT-4 Vision</h3>
+    <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+    <p className="text-md mb-4">
+      GPT-4 Vision extends the capabilities of GPT-4 to the visual domain, enabling the model to understand and generate content that involves images and text. It's designed for multimodal tasks where both text and imagery are pivotal.
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+    <p className="text-md mb-4">
+      This model can be applied to innovative use cases that merge visual and textual understanding, such as:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Image captioning and metadata generation for digital assets.</li>
+        <li>Visual data analysis in conjunction with descriptive analytics.</li>
+        <li>Enhanced creative storytelling with integrated visual elements.</li>
+        <li>Interactive educational content that combines visual cues with explanatory text.</li>
+      </ul>
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+    <p className="text-md mb-4">
+      GPT-4 Vision's performance is contingent on the quality and relevance of the visual data it processes. To ensure optimal outcomes:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Select high-quality, relevant images to accompany text prompts.</li>
+        <li>Test and fine-tune the interplay between visual and textual inputs for your specific application.</li>
+        <li>Be aware of the ethical considerations when generating content that blends images and text.</li>
+      </ul>
+    </p>
+    </div>
+    <div className="model-guide-section mb-8">
+    <h3 className="text-2xl font-semibold mb-4">GPT-3.5</h3>
+    <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+    <p className="text-md mb-4">
+      GPT-3.5 serves as a bridge between GPT-3 and GPT-4, offering improvements in understanding and response quality. It provides a robust platform for a wide range of natural language processing tasks.
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+    <p className="text-md mb-4">
+      The model is adept at various applications including, but not limited to:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Automated content generation for articles, stories, and reports.</li>
+        <li>Language translation with improved contextual awareness.</li>
+        <li>Human-like interaction for conversational bots in customer service.</li>
+        <li>Assistance in educational platforms for tutoring and homework help.</li>
+      </ul>
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+    <p className="text-md mb-4">
+      While GPT-3.5 is a powerful tool, users should be aware of its limitations such as occasional factual inaccuracies or misunderstanding complex prompts. To maximize its potential:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Craft detailed and specific prompts to guide the model's responses.</li>
+        <li>Utilize follow-up questions to refine and improve the accuracy of the information provided.</li>
+        <li>Regularly update and train the model with the latest data for best performance.</li>
+      </ul>
+    </p>
+    </div>
+    <div className="model-guide-section mb-8">
+    <h3 className="text-2xl font-semibold mb-4">Gemini Pro</h3>
+    <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+    <p className="text-md mb-4">
+      Gemini Pro is designed as a versatile AI model for professional-grade applications, excelling in tasks that require advanced reasoning and domain-specific knowledge.
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+    <p className="text-md mb-4">
+      This model is particularly useful for:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Legal and medical document analysis with domain-specific understanding.</li>
+        <li>Complex data interpretation for business intelligence and analytics.</li>
+        <li>Expert-level advice for specialized industries and fields.</li>
+        <li>Advanced educational content creation and curriculum development.</li>
+      </ul>
+    </p>
+    <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+    <p className="text-md mb-4">
+      Gemini Pro, while robust, may require calibration for niche domains or highly specialized content. Best practices include:
+      <ul className="list-disc pl-5 mb-4">
+        <li>Providing context-rich prompts to leverage the model's domain expertise.</li>
+        <li>Verifying the model's outputs against domain-specific data or expert opinion.</li>
+        <li>Continuously training the model with updated, high-quality datasets.</li>
+      </ul>
+    </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Gemini Pro Vision</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Gemini Pro Vision is a specialized AI model that combines visual processing with language understanding to interpret and generate multimodal content. It's designed to seamlessly integrate visual data with text for a comprehensive understanding of both elements in tandem.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        Gemini Pro Vision is adept at tasks that require the synthesis of visual and textual information, such as:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Generating descriptions for images that require detailed visual recognition.</li>
+          <li>Assisting in medical diagnostics by interpreting imagery alongside clinical notes.</li>
+          <li>Creating interactive educational content that pairs visual learning with explanatory narratives.</li>
+          <li>Automating the generation of marketing material by understanding product photos and associated descriptions.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        Like all AI models, Gemini Pro Vision has its constraints, particularly in interpreting complex visual scenes with multiple elements. To get the most out of this model:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Provide clear and high-resolution images to ensure accurate visual interpretation.</li>
+          <li>Pair images with contextually relevant text prompts to guide the model's output.</li>
+          <li>Continuously validate and refine the model's performance with a diverse dataset to avoid biases and improve accuracy.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Mistral Tiny</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Mistral Tiny is a compact and efficient AI model optimized for applications where speed and low resource usage are priorities. It's designed to perform a variety of language tasks with a small footprint.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        Due to its efficiency, Mistral Tiny is suitable for:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Embedding within mobile applications for quick language tasks.</li>
+          <li>Enabling AI functionality in resource-constrained environments.</li>
+          <li>Providing quick responses in chatbots for customer support.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        While Mistral Tiny offers the advantage of efficiency, it may not handle deep contextual tasks as robustly as larger models. Best practices include:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Using simple and direct prompts to maximize performance.</li>
+          <li>Implementing in scenarios where quick, surface-level responses are sufficient.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Mistral Small</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Mistral Small is designed as a balance between performance and size, offering more nuanced language capabilities while still being resource-efficient. It's aimed at scenarios that need a bit more depth in language understanding.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        Mistral Small is well-suited for:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Interactive applications requiring more detailed language generation.</li>
+          <li>Chatbots with a need for understanding moderate context.</li>
+          <li>Language tasks that require a balance of speed and depth.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        Mistral Small can perform many language tasks well but might not capture the full depth of context like larger models. To optimize its use:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Structure prompts to be clear yet allow for a bit more elaboration.</li>
+          <li>Consider the model's output in conjunction with user feedback to improve over time.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Mistral Medium</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Mistral Medium takes the capabilities of smaller models further, offering substantial language processing power suitable for more complex tasks without the full resource requirements of the largest models.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        This model is ideal for:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Advanced chatbots that can handle intricate conversations.</li>
+          <li>Content creation where more extensive context is beneficial.</li>
+          <li>Applications that require detailed analysis of text for insights.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        Mistral Medium provides deeper understanding but may still face limitations in certain areas compared to the larger mistral models
+      <ul className="list-disc pl-5 mb-4">
+        <li>Optimize the model's parameters based on the complexity of the task to ensure a balance between response quality and computational efficiency.</li>
+        <li>Regularly update the model to incorporate the latest improvements and data, ensuring that the model's capabilities continue to align with user expectations.</li>
+      </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Mistral-7b Instruct</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Mistral-7b Instruct is a powerful language model that excels in following instructions and generating responses that closely align with user intents. It's specifically fine-tuned for tasks that require a high level of understanding and adherence to guidelines or prompts provided by users.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        The model is particularly effective in scenarios where precision and compliance with instructions are critical, such as:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Generating content that adheres to specific styles or formats.</li>
+          <li>Answering questions with high accuracy and relevance to the prompt.</li>
+          <li>Creating educational materials that follow a curriculum or educational standards.</li>
+          <li>Automating tasks that require understanding complex instructions, such as data entry or summarization.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        While Mistral-7b Instruct is designed for instruction-following, it may occasionally require prompt refinement to achieve the desired outcome. To utilize this model effectively:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Formulate prompts that are detailed and unambiguous to guide the model's output more effectively.</li>
+          <li>Use iterative prompting to fine-tune the instructions and the model's understanding of the task.</li>
+          <li>Review and edit the model's outputs when necessary to ensure they meet the required standards and intentions.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Nous-Capybara-7b</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Nous-Capybara-7b is tailored for understanding and generating human-like text, offering nuanced and sophisticated language capabilities. Its large-scale model is trained for a variety of complex tasks that require deep language comprehension.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        This model shines in scenarios where detailed, human-like interaction is paramount, including:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Engaging narrative and story generation with rich detail.</li>
+          <li>Simulating human conversation for AI role-play or virtual assistants.</li>
+          <li>Generating informative content for articles, essays, and reports.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        While highly capable, Nous-Capybara-7b may produce outputs that need refinement for specific contexts. Best practices include:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Preparing prompts that are clear and directed towards the model's strengths in generating human-like text.</li>
+          <li>Monitoring for biases in the content and adjusting prompts accordingly to mitigate them.</li>
+          <li>Reviewing generated content for alignment with the intended purpose and accuracy.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Mythomist-7b</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Mythomist-7b is an AI model with a strong focus on creative content generation, especially for crafting stories, myths, and fictional narratives. It is designed to inspire and assist in the creation of rich, imaginative content.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        Perfect for creative endeavours, Mythomist-7b can be utilized for:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Generating unique and captivating stories, novels, and scripts.</li>
+          <li>Providing creative suggestions and expanding on story ideas.</li>
+          <li>Creating engaging content for games, including character dialogue and lore.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        As a creative aid, Mythomist-7b is not intended for fact-based tasks but rather for embellishing and inventing. When using this model:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Encourage the model to explore its creative capacity by providing imaginative prompts.</li>
+          <li>Use the model as a brainstorming partner, building upon the ideas it generates.</li>
+          <li>Ensure that the output aligns with creative goals, and edit for cohesion and style as needed.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Toppy-m-7b</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Toppy-m-7b is engineered for high-level analytical and reasoning tasks, combining advanced natural language processing with machine learning to parse, understand, and generate insightful content across various domains.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        Ideal for applications requiring deep analytical capabilities, such as:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Data analysis and summarization, turning complex datasets into understandable narratives.</li>
+          <li>Problem-solving tasks where logical reasoning and clear articulation are key.</li>
+          <li>Academic research assistance, synthesizing vast amounts of information into cohesive summaries.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        While Toppy-m-7b is adept at analysis and reasoning, it's essential to guide it with specific and well-structured prompts. To maximize effectiveness:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Frame questions or tasks clearly to leverage the model's analytical strengths.</li>
+          <li>Regularly review and refine the model's outputs to ensure accuracy and relevance.</li>
+          <li>Utilize feedback loops to continually improve the model's performance on specialized tasks.</li>
+        </ul>
+      </p>
+    </div>
+    <div className="model-guide-section mb-8">
+      <h3 className="text-2xl font-semibold mb-4">Cinematika-7b</h3>
+      <h4 className="text-xl font-semibold mb-2">Purpose:</h4>
+      <p className="text-md mb-4">
+        Cinematika-7b specializes in understanding and generating content related to film, television, and video production. It's tailored to support creative processes in the visual storytelling industry, offering insights and generating scripts, storyboards, and conceptual ideas.
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Use Cases:</h4>
+      <p className="text-md mb-4">
+        Cinematika-7b can be a valuable tool for:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Scriptwriting and screenplay development, providing creative prompts and narrative structure.</li>
+          <li>Generating detailed descriptions for scenes, settings, and character actions.</li>
+          <li>Assisting in the ideation phase of video production, from commercials to feature films.</li>
+        </ul>
+      </p>
+      <h4 className="text-xl font-semibold mb-2">Limitations and Best Practices:</h4>
+      <p className="text-md mb-4">
+        While Cinematika-7b is designed to foster creativity in visual storytelling, the specificity and uniqueness of creative content require careful calibration. Effective usage involves:
+        <ul className="list-disc pl-5 mb-4">
+          <li>Providing detailed contexts and clear objectives to guide the generation process.</li>
+          <li>Collaborating with the model as a creative partner, using its outputs as a springboard for further development.</li>
+          <li>Reviewing and editing generated content to ensure it aligns with creative vision and industry standards.</li>
+        </ul>
+      </p>
+    </div>
 
       {/* Subsequent sections for each feature will be added here */}
-    </div>
+  
+  </div>
   );
 }
