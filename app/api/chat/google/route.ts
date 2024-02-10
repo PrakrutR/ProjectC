@@ -17,7 +17,8 @@ export async function POST(request: Request) {
     checkApiKey(profile.google_gemini_api_key, "Google")
 
     const genAI = new GoogleGenerativeAI(profile.google_gemini_api_key || "")
-    const googleModel = genAI.getGenerativeModel({ model: chatSettings.model })
+    const safetySettings = { filterLevel: 'high', maxToxicityScore: 0.5 }; // Placeholder structure
+    const googleModel = genAI.getGenerativeModel({ model: chatSettings.model, safetySettings: safetySettings })
 
     if (chatSettings.model === "gemini-pro") {
       const lastMessage = messages.pop()
