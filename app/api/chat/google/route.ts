@@ -23,6 +23,10 @@ export async function POST(request: Request) {
       model: chatSettings.model,
       safetySettings: [
         {
+          category: HarmCategory.HARM_CATEGORY_UNSPECIFIED,
+          threshold: HarmBlockThreshold.BLOCK_NONE
+        },
+        {
           category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
           threshold: HarmBlockThreshold.BLOCK_NONE
         },
