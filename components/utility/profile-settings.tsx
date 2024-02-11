@@ -714,9 +714,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
 
             <WithTooltip
               display={
-                <div>
-                  Download GenHub data as JSON. Import coming soon!
-                </div>
+                <div>Download GenHub data as JSON. Import coming soon!</div>
               }
               trigger={
                 <IconFileDownload

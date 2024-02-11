@@ -1,7 +1,10 @@
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
-import { GoogleGenerativeAI } from "@google/generative-ai"
-
+import {
+  GoogleGenerativeAI,
+  HarmCategory,
+  HarmBlockThreshold
+} from "@google/generative-ai"
 export const runtime = "edge"
 
 export async function POST(request: Request) {
@@ -10,15 +13,37 @@ export async function POST(request: Request) {
     chatSettings: ChatSettings
     messages: any[]
   }
-
   try {
     const profile = await getServerProfile()
 
     checkApiKey(profile.google_gemini_api_key, "Google")
 
     const genAI = new GoogleGenerativeAI(profile.google_gemini_api_key || "")
-    const googleModel = genAI.getGenerativeModel({ model: chatSettings.model })
-
+    const googleModel = genAI.getGenerativeModel({
+      model: chatSettings.model,
+      safetySettings: [
+        {
+          category: HarmCategory.HARM_CATEGORY_UNSPECIFIED,
+          threshold: HarmBlockThreshold.BLOCK_NONE
+        },
+        {
+          category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+          threshold: HarmBlockThreshold.BLOCK_NONE
+        },
+        {
+          category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+          threshold: HarmBlockThreshold.BLOCK_NONE
+        },
+        {
+          category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+          threshold: HarmBlockThreshold.BLOCK_NONE
+        },
+        {
+          category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+          threshold: HarmBlockThreshold.BLOCK_NONE
+        }
+      ]
+    })
     if (chatSettings.model === "gemini-pro") {
       const lastMessage = messages.pop()
 
