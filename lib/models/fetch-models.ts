@@ -90,7 +90,18 @@ export const fetchOpenRouterModels = async () => {
     const { data } = await response.json()
 
     // Define your curated list of model IDs or names
-    const curatedModelList = ['nousresearch/nous-capybara-7b:free', 'mistralai/mistral-7b-instruct:free', 'gryphe/mythomist-7b:free', 'undi95/toppy-m-7b:free', 'openrouter/cinematika-7b:free', 'rwkv/rwkv-5-world-3b', 'recursal/rwkv-5-3b-ai-town', 'recursal/eagle-7b', 'huggingfaceh4/zephyr-7b-beta:free',  'openchat/openchat-7b:free'];
+    const curatedModelList = [
+      "nousresearch/nous-capybara-7b:free",
+      "mistralai/mistral-7b-instruct:free",
+      "gryphe/mythomist-7b:free",
+      "undi95/toppy-m-7b:free",
+      "openrouter/cinematika-7b:free",
+      "rwkv/rwkv-5-world-3b",
+      "recursal/rwkv-5-3b-ai-town",
+      "recursal/eagle-7b",
+      "huggingfaceh4/zephyr-7b-beta:free",
+      "openchat/openchat-7b:free"
+    ]
 
     const openRouterModels = data
       .filter((model: { id: string }) => curatedModelList.includes(model.id))
