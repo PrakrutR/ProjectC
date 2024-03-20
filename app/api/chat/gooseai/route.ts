@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       apiKey: profile.gooseai_api_key || "",
       basePath: "https://api.goose.ai/v1"
     })
-    const openai = new OpenAIApi(configuration)
+    const openai = new OpenAI(configuration)
 
     const response = await openai.chat.completions.create({
       model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
