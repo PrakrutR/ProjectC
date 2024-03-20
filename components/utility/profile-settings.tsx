@@ -657,7 +657,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                     <Input
                       placeholder="GooseAI API Key"
                       type="password"
-                      value={anthropicAPIKey}
+                      value={gooseaiAPIKey}
                       onChange={e => setGooseaiAPIKey(e.target.value)}
                     />
                   </>
