@@ -17,12 +17,10 @@ export async function POST(request: Request) {
     const profile = await getServerProfile()
 
     checkApiKey(profile.gooseai_api_key, "GooseAI")
-    const { Configuration, OpenAIApi } = require("openai")
-    const configuration = new Configuration({
+    const openai = new OpenAI({
       apiKey: profile.gooseai_api_key || "",
-      basePath: "https://api.goose.ai/v1"
+      baseURL: "https://api.goose.ai/v1"
     })
-    const openai = new OpenAI(configuration)
 
     const response = await openai.chat.completions.create({
       model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
