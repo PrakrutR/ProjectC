@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     checkApiKey(profile.gooseai_api_key, "GooseAI")
     const openai = new OpenAI({
       apiKey: profile.gooseai_api_key || "",
-      baseURL: "https://api.goose.ai/v1"
+      organization: "https://api.goose.ai/v1"
     })
 
     const response = await openai.chat.completions.create({
