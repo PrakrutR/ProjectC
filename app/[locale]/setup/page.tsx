@@ -60,6 +60,7 @@ export default function SetupPage() {
   const [groqAPIKey, setGroqAPIKey] = useState("")
   const [perplexityAPIKey, setPerplexityAPIKey] = useState("")
   const [openrouterAPIKey, setOpenrouterAPIKey] = useState("")
+  const [gooseaiAPIKey, setGooseaiAPIKey] = useState("")
 
   useEffect(() => {
     ;(async () => {
@@ -139,7 +140,8 @@ export default function SetupPage() {
       azure_openai_35_turbo_id: azureOpenai35TurboID,
       azure_openai_45_turbo_id: azureOpenai45TurboID,
       azure_openai_45_vision_id: azureOpenai45VisionID,
-      azure_openai_embeddings_id: azureOpenaiEmbeddingsID
+      azure_openai_embeddings_id: azureOpenaiEmbeddingsID,
+      gooseai_api_key: gooseaiAPIKey
     }
 
     const updatedProfile = await updateProfile(profile.id, updateProfilePayload)
@@ -163,7 +165,7 @@ export default function SetupPage() {
           <StepContainer
             stepDescription="Let's create your profile."
             stepNum={currentStep}
-            stepTitle="Welcome to GenHub"
+            stepTitle="Welcome to Chatbot UI"
             onShouldProceed={handleShouldProceed}
             showNextButton={!!(username && usernameAvailable)}
             showBackButton={false}
@@ -204,6 +206,7 @@ export default function SetupPage() {
               mistralAPIKey={mistralAPIKey}
               groqAPIKey={groqAPIKey}
               perplexityAPIKey={perplexityAPIKey}
+              gooseaiAPIKey={gooseaiAPIKey}
               useAzureOpenai={useAzureOpenai}
               onOpenaiAPIKeyChange={setOpenaiAPIKey}
               onOpenaiOrgIDChange={setOpenaiOrgID}
@@ -221,6 +224,7 @@ export default function SetupPage() {
               onUseAzureOpenaiChange={setUseAzureOpenai}
               openrouterAPIKey={openrouterAPIKey}
               onOpenrouterAPIKeyChange={setOpenrouterAPIKey}
+              onGooseaiAPIKeyChange={setGooseaiAPIKey}
             />
           </StepContainer>
         )

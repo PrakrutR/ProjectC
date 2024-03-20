@@ -113,7 +113,9 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
   const [perplexityAPIKey, setPerplexityAPIKey] = useState(
     profile?.perplexity_api_key || ""
   )
-
+  const [gooseaiAPIKey, setGooseaiAPIKey] = useState(
+    profile?.gooseai_api_key || ""
+  )
   const [openrouterAPIKey, setOpenrouterAPIKey] = useState(
     profile?.openrouter_api_key || ""
   )
@@ -157,7 +159,8 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       azure_openai_45_turbo_id: azureOpenai45TurboID,
       azure_openai_45_vision_id: azureOpenai45VisionID,
       azure_openai_embeddings_id: azureEmbeddingsID,
-      openrouter_api_key: openrouterAPIKey
+      openrouter_api_key: openrouterAPIKey,
+      gooseai_api_key: gooseaiAPIKey
     })
 
     setProfile(updatedProfile)
@@ -172,6 +175,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       "mistral",
       "groq",
       "perplexity",
+      "gooseai",
       "openrouter"
     ]
 
@@ -645,6 +649,22 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
               </div>
 
               <div className="space-y-1">
+                {envKeyMap["gooseai"] ? (
+                  <Label>GooseAI API key set by admin.</Label>
+                ) : (
+                  <>
+                    <Label>GooseAI API Key</Label>
+                    <Input
+                      placeholder="GooseAI API Key"
+                      type="password"
+                      value={gooseaiAPIKey}
+                      onChange={e => setGooseaiAPIKey(e.target.value)}
+                    />
+                  </>
+                )}
+              </div>
+
+              <div className="space-y-1">
                 {envKeyMap["google"] ? (
                   <Label>Google Gemini API key set by admin.</Label>
                 ) : (
@@ -733,7 +753,9 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
 
             <WithTooltip
               display={
-                <div>Download GenHub data as JSON. Import coming soon!</div>
+                <div>
+                  Download Chatbot UI 1.0 data as JSON. Import coming soon!
+                </div>
               }
               trigger={
                 <IconFileDownload

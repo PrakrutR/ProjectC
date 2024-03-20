@@ -4,6 +4,7 @@ import { FC } from "react"
 import { Button } from "../ui/button"
 
 interface APIStepProps {
+  gooseaiAPIKey: string
   openaiAPIKey: string
   openaiOrgID: string
   azureOpenaiAPIKey: string
@@ -20,6 +21,7 @@ interface APIStepProps {
   useAzureOpenai: boolean
   openrouterAPIKey: string
   onOpenrouterAPIKeyChange: (value: string) => void
+  onGooseaiAPIKeyChange: (value: string) => void
   onOpenaiAPIKeyChange: (value: string) => void
   onOpenaiOrgIDChange: (value: string) => void
   onAzureOpenaiAPIKeyChange: (value: string) => void
@@ -37,6 +39,7 @@ interface APIStepProps {
 }
 
 export const APIStep: FC<APIStepProps> = ({
+  gooseaiAPIKey,
   openaiAPIKey,
   openaiOrgID,
   azureOpenaiAPIKey,
@@ -52,6 +55,7 @@ export const APIStep: FC<APIStepProps> = ({
   perplexityAPIKey,
   openrouterAPIKey,
   useAzureOpenai,
+  onGooseaiAPIKeyChange,
   onOpenaiAPIKeyChange,
   onOpenaiOrgIDChange,
   onAzureOpenaiAPIKeyChange,
@@ -184,7 +188,16 @@ export const APIStep: FC<APIStepProps> = ({
           onChange={e => onAnthropicAPIKeyChange(e.target.value)}
         />
       </div>
+      <div className="space-y-1">
+        <Label>GooseAI API Key</Label>
 
+        <Input
+          placeholder="GooseAI API Key"
+          type="password"
+          value={gooseaiAPIKey}
+          onChange={e => onGooseaiAPIKeyChange(e.target.value)}
+        />
+      </div>
       <div className="space-y-1">
         <Label>Google Gemini API Key</Label>
 

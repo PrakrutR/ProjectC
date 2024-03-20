@@ -35,7 +35,7 @@ export const ModelSelect: FC<ModelSelectProps> = ({
 
   const [isOpen, setIsOpen] = useState(false)
   const [search, setSearch] = useState("")
-  const [tab, setTab] = useState<"hosted" | "local">("hosted")
+  const [tab, setTab] = useState<"hosted" | "openrouter" | "local">("hosted")
 
   useEffect(() => {
     if (isOpen) {
@@ -136,7 +136,7 @@ export const ModelSelect: FC<ModelSelectProps> = ({
           {availableLocalModels.length > 0 && (
             <TabsList defaultValue="hosted" className="grid grid-cols-2">
               <TabsTrigger value="hosted">Hosted</TabsTrigger>
-
+              <TabsTrigger value="openrouter">openrouter</TabsTrigger>
               <TabsTrigger value="local">Local</TabsTrigger>
             </TabsList>
           )}

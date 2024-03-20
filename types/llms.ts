@@ -7,6 +7,7 @@ export type LLMID =
   | MistralLLMID
   | GroqLLMID
   | PerplexityLLMID
+  | GooseAILLMID
 
 // OpenAI Models (UPDATED 1/29/24)
 export type OpenAILLMID =
@@ -14,6 +15,19 @@ export type OpenAILLMID =
   | "gpt-4-vision-preview" // GPT-4 Vision
   | "gpt-4" // GPT-4
   | "gpt-3.5-turbo" // Updated GPT-3.5 Turbo
+
+// GooseAI Models (UPDATED 1/29/24)
+export type GooseAILLMID =
+  | "gpt-neo-20b" // GPT-NeoX 20B
+  | "gpt-j-6b" // GPT-J 6B
+  | "gpt-neo-2-7b" // GPT-Neo 2.7B
+  | "gpt-neo-1-3b" // GPT-Neo 1.3B
+  | "gpt-neo-125m" // GPT-Neo 125M
+  | "fairseq-13b" // Fairseq 13B
+  | "fairseq-6-7b" // Fairseq 6.7B
+  | "fairseq-2-7b" // Fairseq 2.7B
+  | "fairseq-1-3b" // Fairseq 1.3B
+  | "fairseq-125m" // Fairseq 125M
 
 // Google Models
 export type GoogleLLMID =
@@ -35,6 +49,7 @@ export type MistralLLMID =
   | "mistral-large-2402" // Mistral Large
 
 export type GroqLLMID =
+  | "gemma-7b-it" // Gemma 7B
   | "llama2-70b-4096" // LLaMA2-70b
   | "mixtral-8x7b-32768" // Mixtral-8x7b
 

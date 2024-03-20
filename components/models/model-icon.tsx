@@ -10,6 +10,7 @@ import { FC, HTMLAttributes } from "react"
 import { AnthropicSVG } from "../icons/anthropic-svg"
 import { GoogleSVG } from "../icons/google-svg"
 import { OpenAISVG } from "../icons/openai-svg"
+import { GooseAISVG } from "../icons/gooseai-svg"
 
 interface ModelIconProps extends HTMLAttributes<HTMLDivElement> {
   provider: ModelProvider
@@ -29,6 +30,18 @@ export const ModelIcon: FC<ModelIconProps> = ({
     case "openai":
       return (
         <OpenAISVG
+          className={cn(
+            "rounded-sm bg-[#fff] p-1 text-black",
+            props.className,
+            theme === "dark" ? "bg-white" : "border-[1px] border-black"
+          )}
+          width={width}
+          height={height}
+        />
+      )
+    case "gooseai":
+      return (
+        <GooseAISVG
           className={cn(
             "rounded-sm bg-[#fff] p-1 text-black",
             props.className,
@@ -96,7 +109,7 @@ export const ModelIcon: FC<ModelIconProps> = ({
             theme === "dark" ? "bg-white" : "border-[1px] border-black"
           )}
           src={perplexity.src}
-          alt="Mistral"
+          alt="Perplexity"
           width={width}
           height={height}
         />
