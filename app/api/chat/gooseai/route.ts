@@ -6,7 +6,6 @@ import OpenAI from "openai"
 import { ChatCompletionCreateParamsBase } from "openai/resources/chat/completions.mjs"
 
 export const runtime: ServerRuntime = "edge"
-
 export async function POST(request: Request) {
   const json = await request.json()
   const { chatSettings, messages } = json as {
@@ -18,17 +17,18 @@ export async function POST(request: Request) {
     const profile = await getServerProfile()
 
     checkApiKey(profile.gooseai_api_key, "GooseAI")
-
-    const openai = new OpenAI({
+    const { Configuration, OpenAIApi } = require("openai")
+    const configuration = new Configuration({
       apiKey: profile.gooseai_api_key || "",
       basePath: "https://api.goose.ai/v1"
     })
+    const openai = new OpenAIApi(configuration)
 
     const response = await openai.chat.completions.create({
       model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
       messages: messages as ChatCompletionCreateParamsBase["messages"],
       temperature: chatSettings.temperature,
-      max_tokens: chatSettings.model === "gpt-4-vision-preview" ? 4096 : null, // TODO: Fix
+      max_tokens: undefined,
       stream: true
     })
 
