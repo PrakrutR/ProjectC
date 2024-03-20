@@ -2,6 +2,15 @@ import { LLM } from "@/types"
 
 const GROQ_PLATORM_LINK = "https://groq.com/"
 
+const Gemma_7b_it: LLM = {
+  modelId: "gemma-7b-it",
+  modelName: "Gemma-7BGemma-7b-it",
+  provider: "groq",
+  hostedId: "gemma-7b-it",
+  platformLink: GROQ_PLATORM_LINK,
+  imageInput: false
+}
+
 const LLaMA2_70B: LLM = {
   modelId: "llama2-70b-4096",
   modelName: "LLaMA2-70b-chat",
@@ -20,4 +29,4 @@ const MIXTRAL_8X7B: LLM = {
   imageInput: false
 }
 
-export const GROQ_LLM_LIST: LLM[] = [LLaMA2_70B, MIXTRAL_8X7B]
+export const GROQ_LLM_LIST: LLM[] = [Gemma_7b_it, LLaMA2_70B, MIXTRAL_8X7B]
