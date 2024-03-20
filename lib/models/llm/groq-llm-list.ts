@@ -4,7 +4,7 @@ const GROQ_PLATORM_LINK = "https://groq.com/"
 
 const Gemma_7b_it: LLM = {
   modelId: "gemma-7b-it",
-  modelName: "Gemma-7BGemma-7b-it",
+  modelName: "Gemma-7b-it",
   provider: "groq",
   hostedId: "gemma-7b-it",
   platformLink: GROQ_PLATORM_LINK,
