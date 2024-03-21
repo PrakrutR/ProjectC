@@ -146,18 +146,6 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
     MAX_CONTEXT_LENGTH: 4096
   },
-  "mixtral-8x7b-instruct": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 16384,
-    MAX_CONTEXT_LENGTH: 16384
-  },
-  "mistral-7b-instruct": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 16384,
-    MAX_CONTEXT_LENGTH: 16384
-  },
   "llama-2-70b-chat": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 2.0,

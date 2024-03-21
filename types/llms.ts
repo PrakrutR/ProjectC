@@ -45,8 +45,6 @@ export type PerplexityLLMID =
   | "pplx-70b-online" // Perplexity Online 70B
   | "pplx-7b-chat" // Perplexity Chat 7B
   | "pplx-70b-chat" // Perplexity Chat 70B
-  | "mixtral-8x7b-instruct" // Mixtral 8x7B Instruct
-  | "mistral-7b-instruct" // Mistral 7B Instruct
   | "llama-2-70b-chat" // Llama2 70B Chat
   | "codellama-34b-instruct" // CodeLlama 34B Instruct
   | "codellama-70b-instruct" // CodeLlama 70B Instruct
