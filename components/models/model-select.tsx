@@ -133,15 +133,12 @@ export const ModelSelect: FC<ModelSelectProps> = ({
         align="start"
       >
         <Tabs value={tab} onValueChange={(value: any) => setTab(value)}>
-          {availableLocalModels.length > 0 && (
-            <TabsList defaultValue="hosted" className="grid grid-cols-3">
-              <TabsTrigger value="hosted">Hosted</TabsTrigger>
-              <TabsTrigger value="local">Local</TabsTrigger>
-              {availableOpenRouterModels.length > 0 && (
-                <TabsTrigger value="openrouter">OpenRouter</TabsTrigger>
-              )}
-            </TabsList>
-          )}
+          <TabsList defaultValue="hosted" className="grid grid-cols-3">
+            <TabsTrigger value="hosted">Hosted</TabsTrigger>
+            <TabsTrigger value="local">Local</TabsTrigger>
+            <TabsTrigger value="openrouter">OpenRouter</TabsTrigger>{" "}
+            {/* Always visible */}
+          </TabsList>
         </Tabs>
 
         <Input
