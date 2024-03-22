@@ -134,10 +134,12 @@ export const ModelSelect: FC<ModelSelectProps> = ({
       >
         <Tabs value={tab} onValueChange={(value: any) => setTab(value)}>
           {availableLocalModels.length > 0 && (
-            <TabsList defaultValue="hosted" className="grid grid-cols-2">
+            <TabsList defaultValue="hosted" className="grid grid-cols-3">
               <TabsTrigger value="hosted">Hosted</TabsTrigger>
-
               <TabsTrigger value="local">Local</TabsTrigger>
+              {availableOpenRouterModels.length > 0 && (
+                <TabsTrigger value="openrouter">OpenRouter</TabsTrigger>
+              )}
             </TabsList>
           )}
         </Tabs>
@@ -154,7 +156,11 @@ export const ModelSelect: FC<ModelSelectProps> = ({
           {Object.entries(groupedModels).map(([provider, models]) => {
             const filteredModels = models
               .filter(model => {
-                if (tab === "hosted") return model.provider !== "ollama"
+                if (tab === "hosted")
+                  return (
+                    model.provider !== "ollama" &&
+                    model.provider !== "openrouter"
+                  )
                 if (tab === "local") return model.provider === "ollama"
                 if (tab === "openrouter") return model.provider === "openrouter"
               })
