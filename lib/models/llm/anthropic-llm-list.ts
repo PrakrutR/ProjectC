@@ -20,7 +20,7 @@ const CLAUDE_2: LLM = {
   modelName: "Claude 2.1",
   provider: "anthropic",
   hostedId: "claude-2.1",
-  platformLink: ANTHROPIC_PLATORM_LINK,
+  platformLink: ANTHROPIC_PLATFORM_LINK,
   imageInput: false
 }
 
