@@ -112,7 +112,7 @@ export const fetchOpenRouterModels = async () => {
           context_length: number
         }): OpenRouterLLM => ({
           modelId: model.id as LLMID,
-          modelName: model.id,
+          modelName: model.name,
           provider: "openrouter",
           hostedId: model.name,
           platformLink: "https://openrouter.dev",
