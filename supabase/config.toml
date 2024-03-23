@@ -77,19 +77,19 @@ double_confirm_changes = true
 enable_confirmations = true
 
 # Uncomment to customize email template
-[auth.email.template.confirmation]
+[auth.email.template.invite]
 subject = "Early Alpha Invite: Experience the Power of AI Unified at GenHub!"
 content_path = "./supabase/templates/invite.html"
 
 [auth.sms]
 # Allow/disallow new user signups via SMS to your project.
-enable_signup = true
+enable_signup = false
 # If enabled, users need to confirm their phone number before signing in.
-enable_confirmations = true
+enable_confirmations = false
 
 # Configure one of the supported SMS providers: `twilio`, `twilio_verify`, `messagebird`, `textlocal`, `vonage`.
 [auth.sms.twilio]
-enabled = true
+enabled = false
 account_sid = "AC73aa14f26dd7169f1ce75ae83546a3a3"
 message_service_sid = "VA30cc6d5f87e37a674dd6be6bd74b8656"
 # DO NOT commit your Twilio auth token to git. Use environment variable substitution instead:
