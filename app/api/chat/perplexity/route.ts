@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     const perplexity = new OpenAI({
       apiKey: profile.perplexity_api_key || "",
       baseURL:
-        "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/https://www.genhub.app//perplexity-ai"
+        "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/genhub/perplexity-ai"
     })
 
     const response = await perplexity.chat.completions.create({

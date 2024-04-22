@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     const anthropic = new Anthropic({
       apiKey: profile.anthropic_api_key || "",
       baseURL:
-        "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/https://www.genhub.app//anthropic"
+        "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/genhub/anthropic"
     })
 
     try {
