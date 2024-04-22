@@ -4,7 +4,7 @@ const GROQ_PLATORM_LINK = "https://groq.com/"
 
 const LLaMA3_70B: LLM = {
   modelId: "llama3-70b-8192",
-  modelName: "LLaMA-70b-chat",
+  modelName: "LLaMA3-70b-chat",
   provider: "groq",
   hostedId: "llama3-70b-8192",
   platformLink: GROQ_PLATORM_LINK,
