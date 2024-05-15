@@ -22,10 +22,8 @@ export async function POST(request: Request) {
     })
 
     const response = await together.chat.completions.create({
-      model: chatSettings.model,
       messages,
-      max_tokens:
-        CHAT_SETTING_LIMITS[chatSettings.model].MAX_TOKEN_OUTPUT_LENGTH,
+      model: chatSettings.model,
       stream: true
     })
 
