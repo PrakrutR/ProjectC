@@ -59,9 +59,20 @@ export type PerplexityLLMID =
 
 // Together Models
 export type TogetherLLMID =
-  | "meta-llama/Llama-3-8b-chat-hf" // Meta Llama 3 8b Instruct
-  | "meta-llama/Llama-3-70b-chat-hf" // Meta Llama 3 70b Instruct
-
+  | "zero-one-ai/Yi-34B-Chat" // 01.AI Yi Chat
+  | "allenai/OLMo-7B-Instruct" // OLMo Instruct
+  | "allenai/OLMo-7B-Twin-2T" // OLMo Twin-2T
+  | "allenai/OLMo-7B" // OLMo (7B)
+  | "Austism/chronos-hermes-13b" // Chronos Hermes (13B)
+  | "cognitivecomputations/dolphin-2.5-mixtral-8x7b" // Dolphin 2.5 Mixtral 8x7b
+  | "databricks/dbrx-instruct" // Databricks Instruct
+  | "deepseek-ai/deepseek-coder-33b-instruct" // DeepSeek Coder 33B Instruct
+  | "deepseek-ai/deepseek-llm-67b-chat" // DeepSeek LLM Chat 67B
+  | "garage-bAInd/Platypus2-70B-instruct" // Platypus2 Instruct 70B
+  | "google/gemma-2b-it" // Gemma Instruct 2B
+  | "Gryphe/MythoMax-L2-13b" // MythoMax L2 13B
+  | "lmsys/vicuna-13b-v1.5b" // Vicuna 13B v1.5b
+  | "lmsys/vicuna-7b-v1.5b" // Vicuna 7B v1.5b
 export interface LLM {
   modelId: LLMID
   modelName: string

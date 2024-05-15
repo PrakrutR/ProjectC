@@ -208,16 +208,88 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
   },
 
   // TOGETHER MODELS
-  "meta-llama/Llama-3-8b-chat-hf": {
+  "zero-one-ai/Yi-34B-Chat": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 2.0,
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 4096
+  },
+  "allenai/OLMo-7B-Instruct": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "allenai/OLMo-7B-Twin-2T": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "allenai/OLMo-7B": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "Austism/chronos-hermes-13b": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "cognitivecomputations/dolphin-2.5-mixtral-8x7b": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 32768,
+    MAX_CONTEXT_LENGTH: 32768
+  },
+  "databricks/dbrx-instruct": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 32768,
+    MAX_CONTEXT_LENGTH: 32768
+  },
+  "deepseek-ai/deepseek-coder-33b-instruct": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 16384,
+    MAX_CONTEXT_LENGTH: 16384
+  },
+  "deepseek-ai/deepseek-llm-67b-chat": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 4096
+  },
+  "garage-bAInd/Platypus2-70B-instruct": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 4096
+  },
+  "google/gemma-2b-it": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 8192,
     MAX_CONTEXT_LENGTH: 8192
   },
-  "meta-llama/Llama-3-70b-chat-hf": {
+  "Gryphe/MythoMax-L2-13b": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 2.0,
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 8192
+    MAX_CONTEXT_LENGTH: 4096
+  },
+  "lmsys/vicuna-13b-v1.5b": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 4096
+  },
+  "lmsys/vicuna-7b-v1.5b": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 2.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 4096
   }
 }

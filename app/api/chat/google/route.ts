@@ -19,30 +19,33 @@ export async function POST(request: Request) {
     checkApiKey(profile.google_gemini_api_key, "Google")
 
     const genAI = new GoogleGenerativeAI(profile.google_gemini_api_key || "")
+
+    const safetySettings = [
+      {
+        category: HarmCategory.HARM_CATEGORY_UNSPECIFIED,
+        threshold: HarmBlockThreshold.BLOCK_NONE
+      },
+      {
+        category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+        threshold: HarmBlockThreshold.BLOCK_NONE
+      },
+      {
+        category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+        threshold: HarmBlockThreshold.BLOCK_NONE
+      },
+      {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold: HarmBlockThreshold.BLOCK_NONE
+      },
+      {
+        category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+        threshold: HarmBlockThreshold.BLOCK_NONE
+      }
+    ]
+
     const googleModel = genAI.getGenerativeModel({
       model: chatSettings.model,
-      safetySettings: [
-        {
-          category: HarmCategory.HARM_CATEGORY_UNSPECIFIED,
-          threshold: HarmBlockThreshold.BLOCK_NONE
-        },
-        {
-          category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-          threshold: HarmBlockThreshold.BLOCK_NONE
-        },
-        {
-          category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-          threshold: HarmBlockThreshold.BLOCK_NONE
-        },
-        {
-          category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-          threshold: HarmBlockThreshold.BLOCK_NONE
-        },
-        {
-          category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-          threshold: HarmBlockThreshold.BLOCK_NONE
-        }
-      ]
+      safetySettings
     })
     if (chatSettings.model === "gemini-pro") {
       const lastMessage = messages.pop()
