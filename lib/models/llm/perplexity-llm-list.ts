@@ -7,60 +7,49 @@ const PERPLEXITY_PLATORM_LINK =
 // Model Deprecation Notice
 // Please note that on March 15, the pplx-70b-chat, pplx-70b-online, llama-2-70b-chat, and codellama-34b-instruct models will no longer be available through the Perplexity API.
 
-// CodeLlama 70B Instruct (UPDATED 1/31/24)
-const CODELLAMA_70B_INSTRUCT: LLM = {
-  modelId: "codellama-70b-instruct",
-  modelName: "CodeLlama 70B Instruct",
-  provider: "perplexity",
-  hostedId: "codellama-70b-instruct",
-  platformLink: PERPLEXITY_PLATORM_LINK,
-  imageInput: false
-}
-
 // Sonar Small Chat (UPDATED 2/25/24)
 const PERPLEXITY_SONAR_SMALL_CHAT_7B: LLM = {
-  modelId: "sonar-small-chat",
+  modelId: "llama-3-sonar-small-32k-chat",
   modelName: "Sonar Small Chat",
   provider: "perplexity",
-  hostedId: "sonar-small-chat",
+  hostedId: "llama-3-sonar-small-32k-chat",
   platformLink: PERPLEXITY_PLATORM_LINK,
   imageInput: false
 }
 
 // Sonar Small Online (UPDATED 2/25/24)
 const PERPLEXITY_SONAR_SMALL_ONLINE_7B: LLM = {
-  modelId: "sonar-small-online",
+  modelId: "llama-3-sonar-small-32k-online",
   modelName: "Sonar Small Online",
   provider: "perplexity",
-  hostedId: "sonar-small-online",
+  hostedId: "llama-3-sonar-small-32k-online",
   platformLink: PERPLEXITY_PLATORM_LINK,
   imageInput: false
 }
 
 // Sonar Medium Chat (UPDATED 2/25/24)
-const PERPLEXITY_SONAR_MEDIUM_CHAT_8x7B: LLM = {
-  modelId: "sonar-medium-chat",
-  modelName: "Sonar Medium Chat",
+const PERPLEXITY_SONAR_LARGE_CHAT_70B: LLM = {
+  modelId: "llama-3-sonar-large-32k-chat",
+  modelName: "Sonar Large Chat",
   provider: "perplexity",
-  hostedId: "sonar-medium-chat",
+  hostedId: "llama-3-sonar-large-32k-chat",
   platformLink: PERPLEXITY_PLATORM_LINK,
   imageInput: false
 }
 
 // Sonar Medium Online (UPDATED 2/25/24)
-const PERPLEXITY_SONAR_MEDIUM_ONLINE_8x7B: LLM = {
-  modelId: "sonar-medium-online",
-  modelName: "Sonar Medium Online",
+const PERPLEXITY_SONAR_LARGE_ONLINE_70B: LLM = {
+  modelId: "llama-3-sonar-large-32k-online",
+  modelName: "Sonar Large Online",
   provider: "perplexity",
-  hostedId: "sonar-medium-online",
+  hostedId: "llama-3-sonar-large-32k-online",
   platformLink: PERPLEXITY_PLATORM_LINK,
   imageInput: false
 }
 
 export const PERPLEXITY_LLM_LIST: LLM[] = [
-  CODELLAMA_70B_INSTRUCT,
   PERPLEXITY_SONAR_SMALL_CHAT_7B,
   PERPLEXITY_SONAR_SMALL_ONLINE_7B,
-  PERPLEXITY_SONAR_MEDIUM_CHAT_8x7B,
-  PERPLEXITY_SONAR_MEDIUM_ONLINE_8x7B
+  PERPLEXITY_SONAR_LARGE_CHAT_70B,
+  PERPLEXITY_SONAR_LARGE_ONLINE_70B
 ]

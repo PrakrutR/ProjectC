@@ -140,71 +140,29 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
   },
 
   // PERPLEXITY MODELS
-  "pplx-7b-online": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.99,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 4096
-  },
-  "pplx-70b-online": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.99,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 4096
-  },
-  "pplx-7b-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 8192
-  },
-  "pplx-70b-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 4096
-  },
-  "llama-2-70b-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 2.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 4096
-  },
-  "codellama-34b-instruct": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 16384
-  },
-  "codellama-70b-instruct": {
+  "llama-3-sonar-small-32k-chat": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 16384,
-    MAX_CONTEXT_LENGTH: 16384
+    MAX_CONTEXT_LENGTH: 32768
   },
-  "sonar-small-chat": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 16384,
-    MAX_CONTEXT_LENGTH: 16384
-  },
-  "sonar-small-online": {
+  "llama-3-sonar-small-32k-online": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 12000,
-    MAX_CONTEXT_LENGTH: 12000
+    MAX_CONTEXT_LENGTH: 28000
   },
-  "sonar-medium-chat": {
+  "llama-3-sonar-large-32k-chat": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 16384,
-    MAX_CONTEXT_LENGTH: 16384
+    MAX_CONTEXT_LENGTH: 32768
   },
-  "sonar-medium-online": {
+  "llama-3-sonar-large-32k-online": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 12000,
-    MAX_CONTEXT_LENGTH: 12000
+    MAX_CONTEXT_LENGTH: 28000
   },
 
   // TOGETHER MODELS
