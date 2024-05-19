@@ -19,15 +19,27 @@ export async function POST(request: Request) {
       basePath: "https://api.goose.ai/v1"
     })
 
-    const gooseai = new OpenAIApi(configuration)
+    const gooseAI = new OpenAIApi(configuration)
 
-    const response = await gooseai.createCompletion(chatSettings.model, {
+    const response = await gooseAI.createCompletion({
+      model: chatSettings.model,
       prompt: messages.map(message => message.content).join("\n"),
       stream: true,
       temperature: chatSettings.temperature
     })
 
-    const stream = OpenAIStream(response)
+    // Handle streaming response properly
+    const reader = response.data.getReader()
+    const stream = new ReadableStream({
+      async start(controller) {
+        while (true) {
+          const { done, value } = await reader.read()
+          if (done) break
+          controller.enqueue(value)
+        }
+        controller.close()
+      }
+    })
 
     return new StreamingTextResponse(stream)
   } catch (error: any) {
