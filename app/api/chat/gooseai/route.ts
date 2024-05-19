@@ -1,6 +1,5 @@
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
-import { OpenAIStream, StreamingTextResponse } from "ai"
 import { Configuration, OpenAIApi } from "openai1"
 
 export async function POST(request: Request) {
@@ -21,27 +20,19 @@ export async function POST(request: Request) {
 
     const gooseAI = new OpenAIApi(configuration)
 
-    const response = await gooseAI.createCompletion({
-      model: chatSettings.model,
+    const response = await gooseAI.createCompletion(chatSettings.model, {
       prompt: messages.map(message => message.content).join("\n"),
-      stream: true,
       temperature: chatSettings.temperature
     })
 
-    // Handle streaming response properly
-    const reader = response.data.getReader()
-    const stream = new ReadableStream({
-      async start(controller) {
-        while (true) {
-          const { done, value } = await reader.read()
-          if (done) break
-          controller.enqueue(value)
-        }
-        controller.close()
-      }
-    })
+    const completionText = response.data.choices
+      .map(choice => choice.text)
+      .join("\n")
 
-    return new StreamingTextResponse(stream)
+    return new Response(JSON.stringify({ message: completionText }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" }
+    })
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
     const errorCode = error.status || 500
@@ -55,7 +46,8 @@ export async function POST(request: Request) {
     }
 
     return new Response(JSON.stringify({ message: errorMessage }), {
-      status: errorCode
+      status: errorCode,
+      headers: { "Content-Type": "application/json" }
     })
   }
 }
