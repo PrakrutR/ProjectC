@@ -1,4 +1,3 @@
-import { CHAT_SETTING_LIMITS } from "@/lib/chat-setting-limits"
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
 import { OpenAIStream, StreamingTextResponse } from "ai"
@@ -17,19 +16,18 @@ export async function POST(request: Request) {
 
     const gooseAI = new OpenAI({
       apiKey: profile.gooseai_api_key || "",
-      baseURL: "https://api.goose.ai/v1"
+      baseURL: "https://api.goose.ai/v1/engines"
     })
 
-    const response = await gooseAI.chat.completions.create({
-      messages,
+    const response = await gooseAI.createCompletion({
       model: chatSettings.model,
-      stream: true
+      prompt: messages.map(message => message.content).join("\n"),
+      stream: true,
+      temperature: chatSettings.temperature
     })
 
-    // Convert the response into a friendly text-stream.
     const stream = OpenAIStream(response)
 
-    // Respond with the stream.
     return new StreamingTextResponse(stream)
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
