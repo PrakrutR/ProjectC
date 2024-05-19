@@ -9,7 +9,17 @@ const MISTRAL_7B: LLM = {
   modelId: "mistral-tiny",
   modelName: "Mistral Tiny",
   provider: "mistral",
-  hostedId: "mistral-tiny",
+  hostedId: "open-mistral-7b",
+  platformLink: MISTRAL_PLATORM_LINK,
+  imageInput: false
+}
+
+// Mistral 7B (UPDATED 12/21/23)
+const MISTRAL_8x22B: LLM = {
+  modelId: "open-mixtral-8x22b",
+  modelName: "Mistral Tiny",
+  provider: "mistral",
+  hostedId: "open-mixtral-8x22b",
   platformLink: MISTRAL_PLATORM_LINK,
   imageInput: false
 }
@@ -64,6 +74,7 @@ const MISTRAL_LARGE: LLM = {
 
 export const MISTRAL_LLM_LIST: LLM[] = [
   MISTRAL_7B,
+  MISTRAL_8x22B,
   MIXTRAL,
   MISTRAL_MEDIUM,
   MISTRAL_LARGE
