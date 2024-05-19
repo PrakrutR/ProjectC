@@ -33,6 +33,7 @@ export type AnthropicLLMID =
 // Mistral Models
 export type MistralLLMID =
   | "mistral-tiny" // Mistral Tiny
+  | "open-mixtral-8x22b" // Mixtral 8x22B
   | "mistral-small-latest" // Mistral Small
   | "mistral-medium-latest" // Mistral Medium
   | "mistral-large-latest" // Mistral Large
