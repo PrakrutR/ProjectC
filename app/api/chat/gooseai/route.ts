@@ -26,7 +26,9 @@ export async function POST(request: Request) {
     })
 
     const completionText = response.data.choices
-      ? response.data.choices.map(choice => choice.text.trim()).join("\n")
+      ? response.data.choices
+          .map(choice => (choice.text ? choice.text.trim() : ""))
+          .join("\n")
       : "No completion available"
 
     return new Response(completionText, {
