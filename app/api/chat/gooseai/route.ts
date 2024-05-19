@@ -1,6 +1,7 @@
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
 import { OpenAIStream, StreamingTextResponse } from "ai"
+import { Configuration, OpenAIApi } from "openai1"
 
 export async function POST(request: Request) {
   const json = await request.json()
@@ -12,8 +13,6 @@ export async function POST(request: Request) {
   try {
     const profile = await getServerProfile()
     checkApiKey(profile.gooseai_api_key, "Goose AI")
-
-    const { Configuration, OpenAIApi } = require("openai1")
 
     const configuration = new Configuration({
       apiKey: profile.gooseai_api_key || "",
