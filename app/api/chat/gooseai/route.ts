@@ -19,9 +19,9 @@ export async function POST(request: Request) {
       baseURL: "https://api.goose.ai/v1/engines"
     })
 
-    const response = await gooseAI.createCompletion({
+    const response = await gooseAI.chat.completions.create({
       model: chatSettings.model,
-      prompt: messages.map(message => message.content).join("\n"),
+      messages: messages,
       stream: true,
       temperature: chatSettings.temperature
     })
