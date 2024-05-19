@@ -26,8 +26,8 @@ export async function POST(request: Request) {
     })
 
     const completionText = response.data.choices
-      .map(choice => choice.text)
-      .join("\n")
+      ? response.data.choices.map(choice => choice.text).join("\n")
+      : "No completion available"
 
     return new Response(JSON.stringify({ message: completionText }), {
       status: 200,
