@@ -24,7 +24,8 @@ export async function POST(request: Request) {
     const response = await together.chat.completions.create({
       messages,
       model: chatSettings.model,
-      stream: true
+      stream: true,
+      temperature: chatSettings.temperature
     })
 
     // Convert the response into a friendly text-stream.

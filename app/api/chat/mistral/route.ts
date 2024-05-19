@@ -29,7 +29,8 @@ export async function POST(request: Request) {
       messages,
       max_tokens:
         CHAT_SETTING_LIMITS[chatSettings.model].MAX_TOKEN_OUTPUT_LENGTH,
-      stream: true
+      stream: true,
+      temperature: chatSettings.temperature
     })
 
     // Convert the response into a friendly text-stream.

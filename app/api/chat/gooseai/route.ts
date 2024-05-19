@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       basePath: "https://api.goose.ai/v1"
     })
 
-    const prompt = messages.map(message => message.content).join("\n")
+    const prompt = messages.map(message => message.content).join(" ")
     const max_tokens =
       CHAT_SETTING_LIMITS[chatSettings.model].MAX_CONTEXT_LENGTH - prompt.length
 
@@ -28,8 +28,7 @@ export async function POST(request: Request) {
 
     const response = await gooseAI.createCompletion(chatSettings.model, {
       prompt: prompt,
-      temperature: chatSettings.temperature,
-      max_tokens: 100
+      temperature: chatSettings.temperature
     })
 
     const completionText = response.data.choices
