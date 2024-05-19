@@ -7,3 +7,4 @@ export type EnvKey =
   | "PERPLEXITY_API_KEY"
   | "AZURE_OPENAI_API_KEY"
   | "TOGETHER_API_KEY"
+  | "GOOSEAI_API_KEY"

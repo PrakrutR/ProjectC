@@ -8,6 +8,7 @@ export type LLMID =
   | GroqLLMID
   | PerplexityLLMID
   | TogetherLLMID
+  | GooseAILLMID
 
 // OpenAI Models (UPDATED 5/13/24)
 export type OpenAILLMID =
@@ -67,6 +68,19 @@ export type TogetherLLMID =
   | "Gryphe/MythoMax-L2-13b" // MythoMax L2 13B
   | "lmsys/vicuna-13b-v1.5b" // Vicuna 13B v1.5b
   | "lmsys/vicuna-7b-v1.5b" // Vicuna 7B v1.5b
+
+// GooseAI Models (UPDATED 5/5/24)
+export type GooseAILLMID =
+  | "gpt-neo-20b" // GPT NeoX 20B
+  | "fairseq-125m" // Fairseq 125M
+  | "fairseq-1-3b" // Fairseq 1.3B
+  | "fairseq-2-7b" // Fairseq 2.7B
+  | "fairseq-6b-7b" // Fairseq 6.7B
+  | "fairseq-13b" // Fairseq 13B
+  | "gpt-j-6b" // GPT-J 6B
+  | "gpt-neo-125m" // GPT Neo 125M
+  | "gpt-neo-1-3b" // GPT Neo 1-3B
+  | "gpt-neo-2-7b" // GPT Neo 2-7B
 export interface LLM {
   modelId: LLMID
   modelName: string

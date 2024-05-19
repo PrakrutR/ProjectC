@@ -122,6 +122,10 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
     profile?.together_api_key || ""
   )
 
+  const [gooseaiAPIKey, setGooseaiAPIKey] = useState(
+    profile?.gooseai_api_key || ""
+  )
+
   const handleSignOut = async () => {
     await supabase.auth.signOut()
     router.push("/login")
@@ -155,6 +159,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       groq_api_key: groqAPIKey,
       perplexity_api_key: perplexityAPIKey,
       together_api_key: togetherAPIKey,
+      gooseai_api_key: gooseaiAPIKey,
       use_azure_openai: useAzureOpenai,
       azure_openai_api_key: azureOpenaiAPIKey,
       azure_openai_endpoint: azureOpenaiEndpoint,
@@ -178,7 +183,8 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       "groq",
       "perplexity",
       "openrouter",
-      "together"
+      "together",
+      "gooseai"
     ]
 
     providers.forEach(async provider => {
@@ -741,6 +747,22 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                       type="password"
                       value={togetherAPIKey}
                       onChange={e => setTogetherAPIKey(e.target.value)}
+                    />
+                  </>
+                )}
+              </div>
+
+              <div className="space-y-1">
+                {envKeyMap["gooseai"] ? (
+                  <Label>GooseAI API key set by admin.</Label>
+                ) : (
+                  <>
+                    <Label>GooseAI API Key</Label>
+                    <Input
+                      placeholder="GooseAI API Key"
+                      type="password"
+                      value={gooseaiAPIKey}
+                      onChange={e => setGooseaiAPIKey(e.target.value)}
                     />
                   </>
                 )}

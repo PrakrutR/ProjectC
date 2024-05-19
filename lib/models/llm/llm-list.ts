@@ -6,6 +6,7 @@ import { GROQ_LLM_LIST } from "./groq-llm-list"
 import { OPENAI_LLM_LIST } from "./openai-llm-list"
 import { PERPLEXITY_LLM_LIST } from "./perplexity-llm-list"
 import { TOGETHER_LLM_LIST } from "./together-llm-list"
+import { GOOSEAI_LLM_LIST } from "./gooseai-llm-list"
 
 export const LLM_LIST: LLM[] = [
   ...OPENAI_LLM_LIST,
@@ -14,7 +15,8 @@ export const LLM_LIST: LLM[] = [
   ...GROQ_LLM_LIST,
   ...PERPLEXITY_LLM_LIST,
   ...ANTHROPIC_LLM_LIST,
-  ...TOGETHER_LLM_LIST
+  ...TOGETHER_LLM_LIST,
+  ...GOOSEAI_LLM_LIST
 ]
 
 export const LLM_LIST_MAP: Record<string, LLM[]> = {
@@ -25,5 +27,6 @@ export const LLM_LIST_MAP: Record<string, LLM[]> = {
   groq: GROQ_LLM_LIST,
   perplexity: PERPLEXITY_LLM_LIST,
   anthropic: ANTHROPIC_LLM_LIST,
-  together: TOGETHER_LLM_LIST
+  together: TOGETHER_LLM_LIST,
+  gooseai: GOOSEAI_LLM_LIST
 }

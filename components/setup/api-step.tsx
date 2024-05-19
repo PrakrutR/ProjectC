@@ -20,6 +20,7 @@ interface APIStepProps {
   useAzureOpenai: boolean
   openrouterAPIKey: string
   togetherAPIKey: string
+  gooseaiAPIKey: string
   onOpenrouterAPIKeyChange: (value: string) => void
   onOpenaiAPIKeyChange: (value: string) => void
   onOpenaiOrgIDChange: (value: string) => void
@@ -36,6 +37,7 @@ interface APIStepProps {
   onPerplexityAPIKeyChange: (value: string) => void
   onUseAzureOpenaiChange: (value: boolean) => void
   onTogetherAPIKeyChange: (value: string) => void
+  onGooseaiAPIKeyChange: (value: string) => void
 }
 
 export const APIStep: FC<APIStepProps> = ({
@@ -54,6 +56,7 @@ export const APIStep: FC<APIStepProps> = ({
   perplexityAPIKey,
   openrouterAPIKey,
   togetherAPIKey,
+  gooseaiAPIKey,
   useAzureOpenai,
   onOpenaiAPIKeyChange,
   onOpenaiOrgIDChange,
@@ -70,7 +73,8 @@ export const APIStep: FC<APIStepProps> = ({
   onPerplexityAPIKeyChange,
   onUseAzureOpenaiChange,
   onOpenrouterAPIKeyChange,
-  onTogetherAPIKeyChange
+  onTogetherAPIKeyChange,
+  onGooseaiAPIKeyChange
 }) => {
   return (
     <>
@@ -251,6 +255,17 @@ export const APIStep: FC<APIStepProps> = ({
           type="password"
           value={togetherAPIKey}
           onChange={e => onTogetherAPIKeyChange(e.target.value)}
+        />
+      </div>
+
+      <div className="space-y-1">
+        <Label>GooseAI API Key</Label>
+
+        <Input
+          placeholder="GooseAI API Key"
+          type="password"
+          value={gooseaiAPIKey}
+          onChange={e => onGooseaiAPIKeyChange(e.target.value)}
         />
       </div>
     </>

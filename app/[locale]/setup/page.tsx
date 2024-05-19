@@ -61,6 +61,7 @@ export default function SetupPage() {
   const [perplexityAPIKey, setPerplexityAPIKey] = useState("")
   const [openrouterAPIKey, setOpenrouterAPIKey] = useState("")
   const [togetherAPIKey, setTogetherAPIKey] = useState("")
+  const [gooseaiAPIKey, setGooseaiAPIKey] = useState("")
 
   useEffect(() => {
     ;(async () => {
@@ -135,6 +136,7 @@ export default function SetupPage() {
       perplexity_api_key: perplexityAPIKey,
       openrouter_api_key: openrouterAPIKey,
       together_api_key: togetherAPIKey,
+      gooseai_api_key: gooseaiAPIKey,
       use_azure_openai: useAzureOpenai,
       azure_openai_api_key: azureOpenaiAPIKey,
       azure_openai_endpoint: azureOpenaiEndpoint,
@@ -207,6 +209,7 @@ export default function SetupPage() {
               groqAPIKey={groqAPIKey}
               perplexityAPIKey={perplexityAPIKey}
               togetherAPIKey={togetherAPIKey}
+              gooseaiAPIKey={gooseaiAPIKey}
               useAzureOpenai={useAzureOpenai}
               onOpenaiAPIKeyChange={setOpenaiAPIKey}
               onOpenaiOrgIDChange={setOpenaiOrgID}
@@ -225,6 +228,7 @@ export default function SetupPage() {
               openrouterAPIKey={openrouterAPIKey}
               onOpenrouterAPIKeyChange={setOpenrouterAPIKey}
               onTogetherAPIKeyChange={setTogetherAPIKey}
+              onGooseaiAPIKeyChange={setGooseaiAPIKey}
             />
           </StepContainer>
         )

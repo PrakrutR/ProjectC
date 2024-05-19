@@ -3,6 +3,7 @@ import mistral from "@/public/providers/mistral.png"
 import groq from "@/public/providers/groq.png"
 import perplexity from "@/public/providers/perplexity.png"
 import together from "@/public/providers/together.png"
+import gooseai from "@/public/providers/gooseai.png"
 import { ModelProvider } from "@/types"
 import { IconSparkles } from "@tabler/icons-react"
 import { useTheme } from "next-themes"
@@ -111,6 +112,19 @@ export const ModelIcon: FC<ModelIconProps> = ({
           )}
           src={together.src}
           alt="Together"
+          width={width}
+          height={height}
+        />
+      )
+    case "gooseai":
+      return (
+        <Image
+          className={cn(
+            "rounded-sm",
+            theme === "dark" ? "bg-white" : "border-DEFAULT border-black"
+          )}
+          src={gooseai.src}
+          alt="GooseAI"
           width={width}
           height={height}
         />
