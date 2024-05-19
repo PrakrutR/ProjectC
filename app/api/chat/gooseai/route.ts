@@ -1,8 +1,7 @@
-import { CHAT_SETTING_LIMITS } from "@/lib/chat-setting-limits"
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
 import { OpenAIStream, StreamingTextResponse } from "ai"
-import OpenAI from "openai"
+import openai from "openai"
 
 export async function POST(request: Request) {
   const json = await request.json()
@@ -16,14 +15,18 @@ export async function POST(request: Request) {
     checkApiKey(profile.gooseai_api_key, "Together")
 
     // GooseAI is compatible the OpenAI SDK
-    const gooseai = new OpenAI({
+    const { Configuration, OpenAIApi } = require("openai")
+
+    const configuration = new Configuration({
       apiKey: profile.gooseai_api_key || "",
       baseURL: "https://api.goose.ai/v1"
     })
 
-    const response = await gooseai.chat.completions.create({
-      model: chatSettings.model,
-      messages,
+    const gooseai = new OpenAIApi(configuration)
+
+    const response = await gooseai.createCompletion({
+      engeine_id: chatSettings.model,
+      prompt: messages,
       temperature: chatSettings.temperature,
       stream: true
     })
