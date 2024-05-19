@@ -1,7 +1,8 @@
+import { CHAT_SETTING_LIMITS } from "@/lib/chat-setting-limits"
 import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
 import { OpenAIStream, StreamingTextResponse } from "ai"
-import openai from "openai"
+import OpenAI from "openai"
 
 export async function POST(request: Request) {
   const json = await request.json()
@@ -12,29 +13,23 @@ export async function POST(request: Request) {
 
   try {
     const profile = await getServerProfile()
-    checkApiKey(profile.gooseai_api_key, "Together")
+    checkApiKey(profile.gooseai_api_key, "Goose AI")
 
-    // GooseAI is compatible the OpenAI SDK
-    const { Configuration, OpenAIApi } = require("openai")
-
-    const configuration = new Configuration({
+    const gooseAI = new OpenAI({
       apiKey: profile.gooseai_api_key || "",
       baseURL: "https://api.goose.ai/v1"
     })
 
-    const gooseai = new OpenAIApi(configuration)
-
-    const response = await gooseai.createCompletion({
-      engeine_id: chatSettings.model,
-      prompt: messages,
-      temperature: chatSettings.temperature,
+    const response = await gooseAI.chat.completions.create({
+      messages,
+      model: chatSettings.model,
       stream: true
     })
 
     // Convert the response into a friendly text-stream.
     const stream = OpenAIStream(response)
 
-    // Respond with the stream
+    // Respond with the stream.
     return new StreamingTextResponse(stream)
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
@@ -42,10 +37,10 @@ export async function POST(request: Request) {
 
     if (errorMessage.toLowerCase().includes("api key not found")) {
       errorMessage =
-        "GooseAI API Key not found. Please set it in your profile settings."
+        "Goose AI API Key not found. Please set it in your profile settings."
     } else if (errorCode === 401) {
       errorMessage =
-        "GooseAI API Key is incorrect. Please fix it in your profile settings."
+        "Goose AI API Key is incorrect. Please fix it in your profile settings."
     }
 
     return new Response(JSON.stringify({ message: errorMessage }), {
