@@ -16,7 +16,9 @@ export async function POST(request: Request) {
     checkApiKey(profile.cohere_api_key, "Cohere")
 
     const cohere = new CohereClient({
-      token: profile.cohere_api_key || ""
+      token: profile.cohere_api_key || "",
+      environment:
+        "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/genhub/cohere"
     })
 
     // Prepare chat history without the last message

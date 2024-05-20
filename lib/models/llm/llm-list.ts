@@ -8,7 +8,6 @@ import { PERPLEXITY_LLM_LIST } from "./perplexity-llm-list"
 import { TOGETHER_LLM_LIST } from "./together-llm-list"
 import { GOOSEAI_LLM_LIST } from "./gooseai-llm-list"
 import { COHERE_LLM_LIST } from "./cohere-llm-list"
-import { Cohere } from "cohere-ai"
 
 export const LLM_LIST: LLM[] = [
   ...OPENAI_LLM_LIST,
