@@ -126,6 +126,10 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
     profile?.gooseai_api_key || ""
   )
 
+  const [cohereAPIKey, setCohereAPIKey] = useState(
+    profile?.cohere_api_key || ""
+  )
+
   const handleSignOut = async () => {
     await supabase.auth.signOut()
     router.push("/login")
@@ -160,6 +164,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       perplexity_api_key: perplexityAPIKey,
       together_api_key: togetherAPIKey,
       gooseai_api_key: gooseaiAPIKey,
+      cohere_api_key: cohereAPIKey,
       use_azure_openai: useAzureOpenai,
       azure_openai_api_key: azureOpenaiAPIKey,
       azure_openai_endpoint: azureOpenaiEndpoint,
@@ -184,7 +189,8 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       "perplexity",
       "openrouter",
       "together",
-      "gooseai"
+      "gooseai",
+      "cohere"
     ]
 
     providers.forEach(async provider => {
@@ -763,6 +769,22 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                       type="password"
                       value={gooseaiAPIKey}
                       onChange={e => setGooseaiAPIKey(e.target.value)}
+                    />
+                  </>
+                )}
+              </div>
+
+              <div className="space-y-1">
+                {envKeyMap["cohere"] ? (
+                  <Label>Cohere API key set by admin.</Label>
+                ) : (
+                  <>
+                    <Label>Cohere API Key</Label>
+                    <Input
+                      placeholder="Cohere API Key"
+                      type="password"
+                      value={cohereAPIKey}
+                      onChange={e => setCohereAPIKey(e.target.value)}
                     />
                   </>
                 )}

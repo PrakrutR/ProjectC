@@ -9,4 +9,5 @@ export type ModelProvider =
   | "openrouter"
   | "together"
   | "gooseai"
+  | "cohere"
   | "custom"

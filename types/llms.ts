@@ -9,6 +9,7 @@ export type LLMID =
   | PerplexityLLMID
   | TogetherLLMID
   | GooseAILLMID
+  | CohereLLMID
 
 // OpenAI Models (UPDATED 5/13/24)
 export type OpenAILLMID =
@@ -81,6 +82,15 @@ export type GooseAILLMID =
   | "gpt-neo-125m" // GPT Neo 125M
   | "gpt-neo-1-3b" // GPT Neo 1-3B
   | "gpt-neo-2-7b" // GPT Neo 2-7B
+
+// Cohere Models
+export type CohereLLMID =
+  | "command-r-plus" // Command R Plus
+  | "command-r" // Command R
+  | "command" // Command
+  | "command-nightly" // Command Nightly
+  | "command-light" // Command Light
+  | "command-light-nightly" // Command Light Nightly
 export interface LLM {
   modelId: LLMID
   modelName: string

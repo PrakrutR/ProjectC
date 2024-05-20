@@ -15,6 +15,7 @@ export async function GET() {
     openrouter: VALID_ENV_KEYS.OPENROUTER_API_KEY,
     together: VALID_ENV_KEYS.TOGETHER_API_KEY,
     gooseai: VALID_ENV_KEYS.GOOSEAI_API_KEY,
+    cohere: VALID_ENV_KEYS.COHERE_API_KEY,
 
     openai_organization_id: VALID_ENV_KEYS.OPENAI_ORGANIZATION_ID,
 

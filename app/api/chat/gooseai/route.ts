@@ -28,7 +28,8 @@ export async function POST(request: Request) {
 
     const response = await gooseAI.createCompletion(chatSettings.model, {
       prompt: prompt,
-      temperature: chatSettings.temperature
+      temperature: chatSettings.temperature,
+      max_tokens: 600
     })
 
     const completionText = response.data.choices

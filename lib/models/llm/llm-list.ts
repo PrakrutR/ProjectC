@@ -7,6 +7,8 @@ import { OPENAI_LLM_LIST } from "./openai-llm-list"
 import { PERPLEXITY_LLM_LIST } from "./perplexity-llm-list"
 import { TOGETHER_LLM_LIST } from "./together-llm-list"
 import { GOOSEAI_LLM_LIST } from "./gooseai-llm-list"
+import { COHERE_LLM_LIST } from "./cohere-llm-list"
+import { Cohere } from "cohere-ai"
 
 export const LLM_LIST: LLM[] = [
   ...OPENAI_LLM_LIST,
@@ -16,7 +18,8 @@ export const LLM_LIST: LLM[] = [
   ...PERPLEXITY_LLM_LIST,
   ...ANTHROPIC_LLM_LIST,
   ...TOGETHER_LLM_LIST,
-  ...GOOSEAI_LLM_LIST
+  ...GOOSEAI_LLM_LIST,
+  ...COHERE_LLM_LIST
 ]
 
 export const LLM_LIST_MAP: Record<string, LLM[]> = {
@@ -28,5 +31,6 @@ export const LLM_LIST_MAP: Record<string, LLM[]> = {
   perplexity: PERPLEXITY_LLM_LIST,
   anthropic: ANTHROPIC_LLM_LIST,
   together: TOGETHER_LLM_LIST,
-  gooseai: GOOSEAI_LLM_LIST
+  gooseai: GOOSEAI_LLM_LIST,
+  cohere: COHERE_LLM_LIST
 }

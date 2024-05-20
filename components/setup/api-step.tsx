@@ -21,6 +21,7 @@ interface APIStepProps {
   openrouterAPIKey: string
   togetherAPIKey: string
   gooseaiAPIKey: string
+  cohereAPIKey: string
   onOpenrouterAPIKeyChange: (value: string) => void
   onOpenaiAPIKeyChange: (value: string) => void
   onOpenaiOrgIDChange: (value: string) => void
@@ -38,6 +39,7 @@ interface APIStepProps {
   onUseAzureOpenaiChange: (value: boolean) => void
   onTogetherAPIKeyChange: (value: string) => void
   onGooseaiAPIKeyChange: (value: string) => void
+  onCohereAPIKeyChange: (value: string) => void
 }
 
 export const APIStep: FC<APIStepProps> = ({
@@ -57,6 +59,7 @@ export const APIStep: FC<APIStepProps> = ({
   openrouterAPIKey,
   togetherAPIKey,
   gooseaiAPIKey,
+  cohereAPIKey,
   useAzureOpenai,
   onOpenaiAPIKeyChange,
   onOpenaiOrgIDChange,
@@ -74,7 +77,8 @@ export const APIStep: FC<APIStepProps> = ({
   onUseAzureOpenaiChange,
   onOpenrouterAPIKeyChange,
   onTogetherAPIKeyChange,
-  onGooseaiAPIKeyChange
+  onGooseaiAPIKeyChange,
+  onCohereAPIKeyChange
 }) => {
   return (
     <>
@@ -266,6 +270,17 @@ export const APIStep: FC<APIStepProps> = ({
           type="password"
           value={gooseaiAPIKey}
           onChange={e => onGooseaiAPIKeyChange(e.target.value)}
+        />
+      </div>
+
+      <div className="space-y-1">
+        <Label>Cohere API Key</Label>
+
+        <Input
+          placeholder="Cohere API Key"
+          type="password"
+          value={cohereAPIKey}
+          onChange={e => onCohereAPIKeyChange(e.target.value)}
         />
       </div>
     </>

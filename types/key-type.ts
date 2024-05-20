@@ -8,3 +8,4 @@ export type EnvKey =
   | "AZURE_OPENAI_API_KEY"
   | "TOGETHER_API_KEY"
   | "GOOSEAI_API_KEY"
+  | "COHERE_API_KEY"
