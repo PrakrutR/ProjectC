@@ -23,7 +23,10 @@ export async function POST(request: Request) {
     })
 
     // Prepare chat history without the last message
-    const chatHistory = messages.slice(0, -1)
+    const chatHistory = messages.slice(0, -1).map(message => ({
+      role: message.role === "user" ? "USER" : "CHATBOT",
+      message: message.content
+    }))
 
     // The last message to continue the conversation
     const lastMessage = messages[messages.length - 1].content
