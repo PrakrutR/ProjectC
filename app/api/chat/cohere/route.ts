@@ -47,12 +47,18 @@ export async function POST(request: Request) {
 
     const stream = new ReadableStream({
       async start(controller) {
-        for await (const message of chatStream) {
-          if (message.eventType === "text-generation") {
-            controller.enqueue(message.text)
+        try {
+          for await (const message of chatStream) {
+            if (message.eventType === "text-generation") {
+              controller.enqueue(message.text)
+            }
           }
+        } catch (err) {
+          console.error("Error in stream:", err)
+          controller.error(err)
+        } finally {
+          controller.close()
         }
-        controller.close()
       }
     })
 
