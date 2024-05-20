@@ -137,8 +137,8 @@ export const ModelIcon: FC<ModelIconProps> = ({
             "rounded-sm",
             theme === "dark" ? "bg-white" : "border-DEFAULT border-black"
           )}
-          src={gooseai.src}
-          alt="GooseAI"
+          src={cohere.src}
+          alt="cohere"
           width={width}
           height={height}
         />
