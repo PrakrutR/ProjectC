@@ -35,7 +35,8 @@ export async function POST(request: Request) {
       model: chatSettings.model,
       chatHistory: chatHistory,
       message: lastMessage,
-      temperature: chatSettings.temperature
+      temperature: chatSettings.temperature,
+      connectors: [{ id: "web-search" }]
     })
 
     const readableStream = new ReadableStream({
