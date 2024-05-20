@@ -1177,7 +1177,7 @@ export type Database = {
           display_name?: string
           google_gemini_api_key?: string | null
           gooseai_api_key?: string | null
-          cohereai_api_key?: string | null
+          cohere_api_key?: string | null
           groq_api_key?: string | null
           has_onboarded?: boolean
           id?: string
