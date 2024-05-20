@@ -27,12 +27,22 @@ export async function POST(request: Request) {
     // The last message to continue the conversation
     const lastMessage = messages[messages.length - 1].content
 
+    // Ensure the chatHistory and message formats are correct
+    if (!chatHistory.every(msg => msg.role && msg.content)) {
+      throw new Error(
+        "Invalid request: all elements in chatHistory must have a role and a message."
+      )
+    }
+
+    if (!lastMessage) {
+      throw new Error("Invalid request: lastMessage is required.")
+    }
+
     const chatStream = await cohere.chatStream({
       model: chatSettings.model,
       chatHistory: chatHistory,
       message: lastMessage,
-      temperature: chatSettings.temperature,
-      connectors: [{ id: "web-search" }]
+      temperature: chatSettings.temperature
     })
 
     const stream = new ReadableStream({
@@ -50,6 +60,8 @@ export async function POST(request: Request) {
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
     const errorCode = error.status || 500
+
+    console.error(`Error: ${errorMessage}`)
 
     if (errorMessage.toLowerCase().includes("api key not found")) {
       errorMessage =
