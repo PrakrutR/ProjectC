@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     const chatHistory = messages.slice(0, -1)
 
     // The last message to continue the conversation
-    const lastMessage = messages[messages.length - 1].message
+    const lastMessage = messages[messages.length - 1].content
 
     const chatStream = await cohere.chatStream({
       model: chatSettings.model,
