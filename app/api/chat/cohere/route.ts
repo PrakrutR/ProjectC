@@ -24,23 +24,12 @@ export async function POST(request: Request) {
 
     // Prepare chat history without the last message
     const chatHistory = messages.slice(0, -1).map(message => ({
-      role: message.role === "user" ? "USER" : "CHATBOT",
+      role: message.role,
       message: message.content
     }))
 
     // The last message to continue the conversation
     const lastMessage = messages[messages.length - 1].content
-
-    // Ensure the chatHistory and message formats are correct
-    if (!chatHistory.every(msg => msg.role && msg.content)) {
-      throw new Error(
-        "Invalid request: all elements in chatHistory must have a role and a message."
-      )
-    }
-
-    if (!lastMessage) {
-      throw new Error("Invalid request: lastMessage is required.")
-    }
 
     const chatStream = await cohere.chatStream({
       model: chatSettings.model,
