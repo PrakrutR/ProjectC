@@ -3,6 +3,7 @@ import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
 import { OpenAIStream, StreamingTextResponse } from "ai"
 import { CohereClient } from "cohere-ai"
+import { read } from "fs"
 
 export async function POST(request: Request) {
   const json = await request.json()
@@ -45,24 +46,19 @@ export async function POST(request: Request) {
       temperature: chatSettings.temperature
     })
 
-    const stream = new ReadableStream({
+    const readableStream = new ReadableStream({
       async start(controller) {
-        try {
-          for await (const message of chatStream) {
-            if (message.eventType === "text-generation") {
-              controller.enqueue(message.text)
-            }
+        for await (const chat of chatStream) {
+          if (chat.eventType === "text-generation") {
+            controller.enqueue(chat.text)
           }
-        } catch (err) {
-          console.error("Error in stream:", err)
-          controller.error(err)
-        } finally {
-          controller.close()
         }
+        controller.close()
       }
     })
 
-    return new StreamingTextResponse(stream)
+    // Respond with the stream
+    return new StreamingTextResponse(readableStream)
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
     const errorCode = error.status || 500
