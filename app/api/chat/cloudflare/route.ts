@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     const cloudflare = new OpenAI({
       apiKey: profile.cloudflare_api_key || "",
       baseURL:
-        "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/genhub/workers-ai"
+        "https://api.cloudflare.com/client/v4/accounts/2289e874518b229dd2bbfb474a552b2f/ai/v1"
     })
 
     const response = await cloudflare.chat.completions.create({
