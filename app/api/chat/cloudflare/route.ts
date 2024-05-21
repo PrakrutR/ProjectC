@@ -16,7 +16,6 @@ export async function POST(request: Request) {
 
   try {
     const profile = await getServerProfile()
-
     checkApiKey(profile.cloudflare_api_key, "Cloudflare")
 
     const cloudflare = new OpenAI({
@@ -25,12 +24,16 @@ export async function POST(request: Request) {
         "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/genhub/workers-ai"
     })
 
-    const response = await cloudflare.chat.completions.create({
+    const requestPayload = {
       model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
       messages: messages as ChatCompletionCreateParamsBase["messages"],
       temperature: chatSettings.temperature,
       stream: true
-    })
+    }
+
+    console.log("Request Payload:", JSON.stringify(requestPayload, null, 2))
+
+    const response = await cloudflare.chat.completions.create(requestPayload)
 
     const stream = OpenAIStream(response)
 
