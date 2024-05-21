@@ -4,7 +4,6 @@ import { OpenAIStream, StreamingTextResponse } from "ai"
 import { ServerRuntime } from "next"
 import OpenAI from "openai"
 import { ChatCompletionCreateParamsBase } from "openai/resources/chat/completions.mjs"
-import dotenv from "dotenv"
 
 export const runtime: ServerRuntime = "edge"
 
@@ -18,37 +17,23 @@ export async function POST(request: Request) {
   try {
     const profile = await getServerProfile()
     checkApiKey(profile.cloudflare_api_key, "Cloudflare")
-    const cloudflareAccountId = process.env.CLOUDFLARE_ACCOUNT_ID
-    if (!cloudflareAccountId) {
-      throw new Error("CLOUDFLARE_ACCOUNT_ID is not set in the environment")
-    }
+
     const cloudflare = new OpenAI({
       apiKey: profile.cloudflare_api_key || "",
       baseURL:
-        "https://api.cloudflare.com/client/v4/accounts/${cloudflareAccountId}/ai/v1"
+        "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/genhub/workers-ai"
     })
-
-    const requestPayload = {
-      model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
-      messages: messages as ChatCompletionCreateParamsBase["messages"],
-      temperature: chatSettings.temperature,
-      stream: true
-    }
-
-    console.log("Request Payload:", JSON.stringify(requestPayload, null, 2))
 
     const response = await cloudflare.chat.completions.create({
       model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
       messages: messages as ChatCompletionCreateParamsBase["messages"],
-      temperature: chatSettings.temperature,
-      stream: true
+      temperature: chatSettings.temperature
     })
 
-    console.log("Response:", JSON.stringify(response, null, 2))
-
-    const stream = OpenAIStream(response)
-
-    return new StreamingTextResponse(stream)
+    return new Response(JSON.stringify(response), {
+      status: 200,
+      headers: { "Content-Type": "application/json" }
+    })
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
     const errorCode = error.status || 500
