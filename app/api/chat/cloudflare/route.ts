@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     checkApiKey(profile.cloudflare_api_key, "Cloudflare")
 
     const cloudflare = new OpenAI({
-      apiKey: profile.cloudflare_api_key || "",
+      apiKey: `Bearer ${profile.cloudflare_api_key || ""}`,
       baseURL:
         "https://gateway.ai.cloudflare.com/v1/2289e874518b229dd2bbfb474a552b2f/genhub/workers-ai"
     })
@@ -33,7 +33,12 @@ export async function POST(request: Request) {
 
     console.log("Request Payload:", JSON.stringify(requestPayload, null, 2))
 
-    const response = await cloudflare.chat.completions.create(requestPayload)
+    const response = await cloudflare.chat.completions.create({
+      model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
+      messages: messages as ChatCompletionCreateParamsBase["messages"],
+      temperature: chatSettings.temperature,
+      stream: true
+    })
 
     const stream = OpenAIStream(response)
 
