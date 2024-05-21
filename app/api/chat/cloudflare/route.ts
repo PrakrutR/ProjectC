@@ -25,15 +25,17 @@ export async function POST(request: Request) {
     })
 
     const response = await cloudflare.chat.completions.create({
-      model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
-      messages: messages as ChatCompletionCreateParamsBase["messages"],
-      temperature: chatSettings.temperature
+      model: chatSettings.model,
+      messages: messages,
+      temperature: chatSettings.temperature,
+      stream: true
     })
 
-    return new Response(JSON.stringify(response), {
-      status: 200,
-      headers: { "Content-Type": "application/json" }
-    })
+    // Convert the response into a friendly text-stream.
+    const stream = OpenAIStream(response)
+
+    // Respond with the stream
+    return new StreamingTextResponse(stream)
   } catch (error: any) {
     let errorMessage = error.message || "An unexpected error occurred"
     const errorCode = error.status || 500
