@@ -40,6 +40,8 @@ export async function POST(request: Request) {
       stream: true
     })
 
+    console.log("Response:", JSON.stringify(response, null, 2))
+
     const stream = OpenAIStream(response)
 
     return new StreamingTextResponse(stream)
