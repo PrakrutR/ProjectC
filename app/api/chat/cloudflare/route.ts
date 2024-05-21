@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
     const response = await cloudflare.chat.completions.create({
       model: chatSettings.model,
-      messages: messages as ChatCompletionCreateParamsBase["messages"],
+      messages: messages,
       temperature: chatSettings.temperature,
       stream: true
     })
