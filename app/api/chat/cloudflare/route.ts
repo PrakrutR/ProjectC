@@ -26,8 +26,8 @@ export async function POST(request: Request) {
     })
 
     const response = await cloudflare.chat.completions.create({
-      model: chatSettings.model,
-      messages: messages,
+      model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
+      messages: messages as ChatCompletionCreateParamsBase["messages"],
       temperature: chatSettings.temperature,
       stream: true
     })
@@ -39,6 +39,8 @@ export async function POST(request: Request) {
     let errorMessage = error.message || "An unexpected error occurred"
     const errorCode = error.status || 500
 
+    console.error(`Error: ${errorMessage}`, error)
+
     if (errorMessage.toLowerCase().includes("api key not found")) {
       errorMessage =
         "Cloudflare API Key not found. Please set it in your profile settings."
@@ -48,7 +50,8 @@ export async function POST(request: Request) {
     }
 
     return new Response(JSON.stringify({ message: errorMessage }), {
-      status: errorCode
+      status: errorCode,
+      headers: { "Content-Type": "application/json" }
     })
   }
 }
