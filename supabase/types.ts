@@ -1128,6 +1128,7 @@ export type Database = {
           perplexity_api_key: string | null
           profile_context: string
           together_api_key: string | null
+          cloudflare_api_key: string | null
           updated_at: string | null
           use_azure_openai: boolean
           user_id: string
@@ -1159,6 +1160,7 @@ export type Database = {
           perplexity_api_key?: string | null
           profile_context: string
           together_api_key?: string | null
+          cloudflare_api_key?: string
           updated_at?: string | null
           use_azure_openai: boolean
           user_id: string
@@ -1190,6 +1192,7 @@ export type Database = {
           perplexity_api_key?: string | null
           profile_context?: string
           together_api_key?: string | null
+          cloudflare_api_key?: string
           updated_at?: string | null
           use_azure_openai?: boolean
           user_id?: string

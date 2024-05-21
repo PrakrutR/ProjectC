@@ -10,4 +10,5 @@ export type ModelProvider =
   | "together"
   | "gooseai"
   | "cohere"
+  | "cloudflare"
   | "custom"

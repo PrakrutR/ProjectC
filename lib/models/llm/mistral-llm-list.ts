@@ -17,27 +17,11 @@ const MISTRAL_7B: LLM = {
 // Mistral 7B (UPDATED 12/21/23)
 const MISTRAL_8x22B: LLM = {
   modelId: "open-mixtral-8x22b",
-  modelName: "Mistral Tiny",
+  modelName: "Mistral 8x22B",
   provider: "mistral",
   hostedId: "open-mixtral-8x22b",
   platformLink: MISTRAL_PLATORM_LINK,
   imageInput: false
-}
-
-// Mixtral (UPDATED 12/21/23)
-const MIXTRAL: LLM = {
-  modelId: "mistral-small-latest",
-  modelName: "Mistral Small",
-  provider: "mistral",
-  hostedId: "mistral-small-latest",
-  platformLink: MISTRAL_PLATORM_LINK,
-  imageInput: false,
-  pricing: {
-    currency: "USD",
-    unit: "1M tokens",
-    inputCost: 2,
-    outputCost: 6
-  }
 }
 
 // Mistral Medium (UPDATED 12/21/23)
@@ -75,7 +59,6 @@ const MISTRAL_LARGE: LLM = {
 export const MISTRAL_LLM_LIST: LLM[] = [
   MISTRAL_7B,
   MISTRAL_8x22B,
-  MIXTRAL,
   MISTRAL_MEDIUM,
   MISTRAL_LARGE
 ]

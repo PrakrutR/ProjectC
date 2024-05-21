@@ -63,6 +63,7 @@ export default function SetupPage() {
   const [togetherAPIKey, setTogetherAPIKey] = useState("")
   const [gooseaiAPIKey, setGooseaiAPIKey] = useState("")
   const [cohereAPIKey, setCohereAPIKey] = useState("")
+  const [cloudflareAPIKey, setCloudflareAPIKey] = useState("")
 
   useEffect(() => {
     ;(async () => {
@@ -139,6 +140,7 @@ export default function SetupPage() {
       together_api_key: togetherAPIKey,
       gooseai_api_key: gooseaiAPIKey,
       cohere_api_key: cohereAPIKey,
+      cloudflare_api_key: cloudflareAPIKey,
       use_azure_openai: useAzureOpenai,
       azure_openai_api_key: azureOpenaiAPIKey,
       azure_openai_endpoint: azureOpenaiEndpoint,
@@ -213,6 +215,7 @@ export default function SetupPage() {
               togetherAPIKey={togetherAPIKey}
               gooseaiAPIKey={gooseaiAPIKey}
               cohereAPIKey={cohereAPIKey}
+              cloudflareAPIKey={cloudflareAPIKey}
               useAzureOpenai={useAzureOpenai}
               onOpenaiAPIKeyChange={setOpenaiAPIKey}
               onOpenaiOrgIDChange={setOpenaiOrgID}
@@ -233,6 +236,7 @@ export default function SetupPage() {
               onTogetherAPIKeyChange={setTogetherAPIKey}
               onGooseaiAPIKeyChange={setGooseaiAPIKey}
               onCohereAPIKeyChange={setCohereAPIKey}
+              onCloudflareAPIKeyChange={setCloudflareAPIKey}
             />
           </StepContainer>
         )

@@ -130,6 +130,10 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
     profile?.cohere_api_key || ""
   )
 
+  const [cloudflareAPIKey, setCloudflareAPIKey] = useState(
+    profile?.cloudflare_api_key || ""
+  )
+
   const handleSignOut = async () => {
     await supabase.auth.signOut()
     router.push("/login")
@@ -165,6 +169,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       together_api_key: togetherAPIKey,
       gooseai_api_key: gooseaiAPIKey,
       cohere_api_key: cohereAPIKey,
+      cloudflare_api_key: cloudflareAPIKey,
       use_azure_openai: useAzureOpenai,
       azure_openai_api_key: azureOpenaiAPIKey,
       azure_openai_endpoint: azureOpenaiEndpoint,
@@ -190,7 +195,8 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       "openrouter",
       "together",
       "gooseai",
-      "cohere"
+      "cohere",
+      "cloudflare"
     ]
 
     providers.forEach(async provider => {
@@ -785,6 +791,22 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                       type="password"
                       value={cohereAPIKey}
                       onChange={e => setCohereAPIKey(e.target.value)}
+                    />
+                  </>
+                )}
+              </div>
+
+              <div className="space-y-1">
+                {envKeyMap["cloudflare"] ? (
+                  <Label>Cloudflare API key set by admin.</Label>
+                ) : (
+                  <>
+                    <Label>Cloudflare API Key</Label>
+                    <Input
+                      placeholder="Cloudflare API Key"
+                      type="password"
+                      value={cloudflareAPIKey}
+                      onChange={e => setCloudflareAPIKey(e.target.value)}
                     />
                   </>
                 )}

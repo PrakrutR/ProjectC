@@ -1,0 +1,1 @@
+ALTER TABLE profiles ADD COLUMN cloudflare_api_key TEXT CHECK (char_length(cloudflare_api_key) <= 1000);

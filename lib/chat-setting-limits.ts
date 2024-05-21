@@ -67,12 +67,6 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
     MAX_CONTEXT_LENGTH: 64000
   },
-  "mistral-small-latest": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 1.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 2000,
-    MAX_CONTEXT_LENGTH: 32000
-  },
   "mistral-medium-latest": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 1.0,
@@ -120,23 +114,11 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_CONTEXT_LENGTH: 4096
     // MAX_CONTEXT_LENGTH: 16385 (TODO: Change this back to 16385 when OpenAI bumps the model)
   },
-  "gpt-4-turbo-preview": {
+  "gpt-4-turbo": {
     MIN_TEMPERATURE: 0.0,
     MAX_TEMPERATURE: 2.0,
     MAX_TOKEN_OUTPUT_LENGTH: 4096,
     MAX_CONTEXT_LENGTH: 128000
-  },
-  "gpt-4-vision-preview": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 2.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 128000
-  },
-  "gpt-4": {
-    MIN_TEMPERATURE: 0.0,
-    MAX_TEMPERATURE: 2.0,
-    MAX_TOKEN_OUTPUT_LENGTH: 4096,
-    MAX_CONTEXT_LENGTH: 8192
   },
   "gpt-4o": {
     MIN_TEMPERATURE: 0.0,
@@ -355,5 +337,175 @@ export const CHAT_SETTING_LIMITS: Record<LLMID, ChatSettingLimits> = {
     MAX_TEMPERATURE: 1.0,
     MAX_TOKEN_OUTPUT_LENGTH: 2048,
     MAX_CONTEXT_LENGTH: 4096
+  },
+
+  //Cloudflare Models
+  "llama-2-7b-chat-fp16": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2500,
+    MAX_CONTEXT_LENGTH: 3072
+  },
+  "llama-2-7b-chat-int8": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 1800,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "deepseek-coder-6.7b-base-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "deepseek-coder-6.7b-instruct-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "discolm-german-7b-v1-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "falcon-7b-instruct": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "gemma-2b-it-lora": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 8192,
+    MAX_CONTEXT_LENGTH: 8192
+  },
+  "gemma-7b-it-lora": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 8192,
+    MAX_CONTEXT_LENGTH: 8192
+  },
+  "hermes-2-pro-mistral-7b": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "llama-2-13b-chat-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2500,
+    MAX_CONTEXT_LENGTH: 3072
+  },
+  "llama-2-7b-chat-hf-lora": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2500,
+    MAX_CONTEXT_LENGTH: 3072
+  },
+  "llama-3-8b-instruct": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 8192,
+    MAX_CONTEXT_LENGTH: 8192
+  },
+  "mistral-7b-instruct-v0.2": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "mistral-7b-instruct-v0.2-lora": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "mistral-7b-instruct-v0.1-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "neural-chat-7b-v3-1-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "openchat-3.5-0106": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "openhermes-2.5-mistral-7b-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "phi-2": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "qwen1.5-0.5b-chat": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "qwen1.5-1.8b-chat": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "qwen1.5-14b-chat-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "qwen1.5-7b-chat-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "sqlcoder-7b-2": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "starling-lm-7b-beta": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 4096,
+    MAX_CONTEXT_LENGTH: 8192
+  },
+  "tinyllama-1.1b-chat-v1.0": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "una-cybertron-7b-v2-bf16": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
+  },
+  "zephyr-7b-beta-awq": {
+    MIN_TEMPERATURE: 0.0,
+    MAX_TEMPERATURE: 1.0,
+    MAX_TOKEN_OUTPUT_LENGTH: 2048,
+    MAX_CONTEXT_LENGTH: 2048
   }
 }

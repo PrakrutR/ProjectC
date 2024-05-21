@@ -49,7 +49,7 @@ const Gemma_7b_it: LLM = {
 
 const MIXTRAL_8X7B: LLM = {
   modelId: "mixtral-8x7b-32768",
-  modelName: "Mixtral-8x7b-Instruct-v0.1",
+  modelName: "Mistral Small",
   provider: "groq",
   hostedId: "mixtral-8x7b-32768",
   platformLink: GROQ_PLATORM_LINK,

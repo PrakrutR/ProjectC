@@ -13,7 +13,8 @@ export const fetchHostedModels = async (profile: Tables<"profiles">) => {
       "perplexity",
       "together",
       "gooseai",
-      "cohere"
+      "cohere",
+      "cloudflare"
     ]
 
     if (profile.use_azure_openai) {
@@ -101,18 +102,14 @@ export const fetchOpenRouterModels = async () => {
     // Define your curated list of model IDs or names
     const curatedModelList = [
       "lynn/soliloquy-l3",
-      "meta-llama/llama-3-8b-instruct:free",
-      "google/gemma-7b-it:free",
       "nousresearch/nous-capybara-7b:free",
-      "mistralai/mistral-7b-instruct:free",
       "gryphe/mythomist-7b:free",
       "undi95/toppy-m-7b:free",
       "openrouter/cinematika-7b:free",
       "rwkv/rwkv-5-world-3b",
       "recursal/rwkv-5-3b-ai-town",
       "recursal/eagle-7b",
-      "huggingfaceh4/zephyr-7b-beta:free",
-      "openchat/openchat-7b:free"
+      "huggingfaceh4/zephyr-7b-beta:free"
     ]
 
     const openRouterModels = data

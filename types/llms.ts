@@ -1,3 +1,4 @@
+import exp from "constants"
 import { ModelProvider } from "."
 
 export type LLMID =
@@ -10,13 +11,12 @@ export type LLMID =
   | TogetherLLMID
   | GooseAILLMID
   | CohereLLMID
+  | CloudflareLLMID
 
 // OpenAI Models (UPDATED 5/13/24)
 export type OpenAILLMID =
   | "gpt-4o" // GPT-4o
-  | "gpt-4-turbo-preview" // GPT-4 Turbo
-  | "gpt-4-vision-preview" // GPT-4 Vision
-  | "gpt-4" // GPT-4
+  | "gpt-4-turbo" // GPT-4 Turbo
   | "gpt-3.5-turbo" // Updated GPT-3.5 Turbo
 
 // Google Models
@@ -36,7 +36,6 @@ export type AnthropicLLMID =
 export type MistralLLMID =
   | "mistral-tiny" // Mistral Tiny
   | "open-mixtral-8x22b" // Mixtral 8x22B
-  | "mistral-small-latest" // Mistral Small
   | "mistral-medium-latest" // Mistral Medium
   | "mistral-large-latest" // Mistral Large
 
@@ -91,6 +90,37 @@ export type CohereLLMID =
   | "command-nightly" // Command Nightly
   | "command-light" // Command Light
   | "command-light-nightly" // Command Light Nightly
+
+// Cloudflare Models
+export type CloudflareLLMID =
+  | "llama-2-7b-chat-fp16" // LLaMa 2 7B Chat fp16
+  | "llama-2-7b-chat-int8" // LLaMa 2 7B Chat int8
+  | "deepseek-coder-6.7b-base-awq" // DeepSeek Coder 6.7B Base AWQ
+  | "deepseek-coder-6.7b-instruct-awq" // DeepSeek Coder 6.7B Instruct AWQ
+  | "discolm-german-7b-v1-awq" // Discolm German 7B V1 AWQ
+  | "falcon-7b-instruct" // Falcon 7B Instruct
+  | "gemma-2b-it-lora" // Gemma 2B IT Lora
+  | "gemma-7b-it-lora" // Gemma 7B IT Lora
+  | "hermes-2-pro-mistral-7b" // Hermes 2 Pro Mistral 7B
+  | "llama-2-7b-chat-hf-lora" // LLaMa 2 7B Chat HF Lora
+  | "llama-2-13b-chat-awq" // LLaMa 2 13B Chat AWQ
+  | "llama-3-8b-instruct" // LLaMa 3 8B Instruct
+  | "mistral-7b-instruct-v0.2" // Mistral 7B Instruct v0.2
+  | "mistral-7b-instruct-v0.1-awq" // Mistral 7B Instruct v0.1 AWQ
+  | "mistral-7b-instruct-v0.2-lora" // Mistral 7B Instruct v0.2 Lora
+  | "neural-chat-7b-v3-1-awq" // Neural Chat 7B v3.1 AWQ
+  | "openchat-3.5-0106" // OpenChat 3.5 0106
+  | "openhermes-2.5-mistral-7b-awq" // OpenHermes 2.5 Mistral 7B AWQ
+  | "phi-2" // Phi 2
+  | "qwen1.5-0.5b-chat" // Qwen1.5 0.5B Chat
+  | "qwen1.5-1.8b-chat" // Qwen1.5 1.8B Chat
+  | "qwen1.5-14b-chat-awq" // Qwen1.5 14B Chat AWQ
+  | "qwen1.5-7b-chat-awq" // Qwen1.5 7B Chat AWQ
+  | "sqlcoder-7b-2" // SQLCoder 7B 2
+  | "starling-lm-7b-beta" // Starling LM 7B Beta
+  | "tinyllama-1.1b-chat-v1.0" // TinyLLaMa 1.1B Chat v1.0
+  | "una-cybertron-7b-v2-bf16" // Una Cybertron 7B v2 BF16
+  | "zephyr-7b-beta-awq" // Zephyr 7B Beta AWQ
 export interface LLM {
   modelId: LLMID
   modelName: string

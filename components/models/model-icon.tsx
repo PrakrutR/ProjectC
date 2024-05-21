@@ -5,6 +5,7 @@ import perplexity from "@/public/providers/perplexity.png"
 import together from "@/public/providers/together.png"
 import gooseai from "@/public/providers/gooseai.png"
 import cohere from "@/public/providers/cohere.png"
+import cloudflare from "@/public/providers/cloudflare.png"
 import { ModelProvider } from "@/types"
 import { IconSparkles } from "@tabler/icons-react"
 import { useTheme } from "next-themes"
@@ -139,6 +140,19 @@ export const ModelIcon: FC<ModelIconProps> = ({
           )}
           src={cohere.src}
           alt="cohere"
+          width={width}
+          height={height}
+        />
+      )
+    case "cloudflare":
+      return (
+        <Image
+          className={cn(
+            "rounded-sm",
+            theme === "dark" ? "bg-white" : "border-DEFAULT border-black"
+          )}
+          src={cloudflare.src}
+          alt="cloudflare"
           width={width}
           height={height}
         />

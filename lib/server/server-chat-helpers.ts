@@ -50,6 +50,7 @@ function addApiKeysToProfile(profile: Tables<"profiles">) {
     [VALID_ENV_KEYS.TOGETHER_API_KEY]: "together_api_key",
     [VALID_ENV_KEYS.GOOSEAI_API_KEY]: "gooseai_api_key",
     [VALID_ENV_KEYS.COHERE_API_KEY]: "cohere_api_key",
+    [VALID_ENV_KEYS.CLOUDFLARE_API_KEY]: "cloudflare_api_key",
 
     [VALID_ENV_KEYS.OPENAI_ORGANIZATION_ID]: "openai_organization_id",
 
