@@ -24,7 +24,7 @@ const PERPLEXITY_SONAR_SMALL_ONLINE_7B: LLM = {
   provider: "perplexity",
   hostedId: "llama-3-sonar-small-32k-online",
   platformLink: PERPLEXITY_PLATORM_LINK,
-  imageInput: false
+  imageInput: true
 }
 
 // Sonar Medium Chat (UPDATED 2/25/24)
@@ -44,7 +44,7 @@ const PERPLEXITY_SONAR_LARGE_ONLINE_70B: LLM = {
   provider: "perplexity",
   hostedId: "llama-3-sonar-large-32k-online",
   platformLink: PERPLEXITY_PLATORM_LINK,
-  imageInput: false
+  imageInput: true
 }
 
 export const PERPLEXITY_LLM_LIST: LLM[] = [
