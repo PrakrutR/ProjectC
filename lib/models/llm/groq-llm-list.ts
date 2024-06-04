@@ -42,8 +42,8 @@ const Gemma_7b_it: LLM = {
   pricing: {
     currency: "USD",
     unit: "1M tokens",
-    inputCost: 0.59,
-    outputCost: 0.79
+    inputCost: 0.15,
+    outputCost: 0.15
   }
 }
 
