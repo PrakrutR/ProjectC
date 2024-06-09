@@ -101,7 +101,6 @@ export const fetchOpenRouterModels = async () => {
 
     // Define your curated list of model IDs or names
     const curatedModelList = [
-      "lynn/soliloquy-l3",
       "nousresearch/nous-capybara-7b:free",
       "gryphe/mythomist-7b:free",
       "undi95/toppy-m-7b:free",

@@ -21,7 +21,15 @@ export async function POST(request: Request) {
     const genAI = new GoogleGenerativeAI(profile.google_gemini_api_key || "")
 
     const googleModel = genAI.getGenerativeModel({
-      model: chatSettings.model,
+      model: chatSettings.model
+    })
+    const lastMessage = messages.pop()
+
+    const chat = googleModel.startChat({
+      history: messages,
+      generationConfig: {
+        temperature: chatSettings.temperature
+      },
       safetySettings: [
         {
           category: HarmCategory.HARM_CATEGORY_UNSPECIFIED,
@@ -44,14 +52,6 @@ export async function POST(request: Request) {
           threshold: HarmBlockThreshold.BLOCK_NONE
         }
       ]
-    })
-    const lastMessage = messages.pop()
-
-    const chat = googleModel.startChat({
-      history: messages,
-      generationConfig: {
-        temperature: chatSettings.temperature
-      }
     })
 
     const response = await chat.sendMessageStream(lastMessage.parts)
