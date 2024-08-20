@@ -108,7 +108,8 @@ export const fetchOpenRouterModels = async () => {
       "rwkv/rwkv-5-world-3b",
       "recursal/rwkv-5-3b-ai-town",
       "recursal/eagle-7b",
-      "huggingfaceh4/zephyr-7b-beta:free"
+      "huggingfaceh4/zephyr-7b-beta:free",
+      "nousresearch/hermes-3-llama-3.1-405b:extended"
     ]
 
     const openRouterModels = data
